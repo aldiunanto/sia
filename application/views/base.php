@@ -65,7 +65,7 @@
 		if(! empty($js)){
 			foreach($js as $file){
 	?>
-				<script src="<?php echo base_url('application/views/assets/scripts/' . $file) ?>" type="text/javascript"></script>
+				<script src="<?php echo base_url('application/views/assets/scripts/' . $file . '.js') ?>" type="text/javascript"></script>
 	<?php
 			}
 		}
