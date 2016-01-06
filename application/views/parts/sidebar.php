@@ -40,6 +40,7 @@
 						Products
 					</a>
 				</li>
+				<!--
 				<li>
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
@@ -109,6 +110,7 @@
 						</li>
 					</ul>
 				</li>
+				-->
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
