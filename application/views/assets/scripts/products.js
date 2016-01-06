@@ -6,7 +6,9 @@ products = {
 		},
 		_dataTables: function(){
 			$('#product-list').DataTable({
-				'aoColumnDefs': [
+				'pageLength'	: 5,
+				'sPageButton'	: 'btn btn-default',
+				'aoColumnDefs'	: [
 					{ 'bSortable' : false, 'aTargets' : [0] }
 				]
 			});
