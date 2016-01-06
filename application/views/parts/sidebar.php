@@ -24,7 +24,7 @@
 					</form>
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
-				<li>
+				<li <?php isActive('home') ?>>
 					<a href="<?php echo base_url(); ?>">
 						<i class="fa fa-home"></i>
 						<span class="title">
@@ -32,6 +32,12 @@
 						</span>
 						<span class="selected">
 						</span>
+					</a>
+				</li>
+				<li <?php isActive('products') ?>>
+					<a href="<?php echo base_url('products') ?>">
+						<i class="fa fa-sitemap"></i>
+						Products
 					</a>
 				</li>
 				<li>
@@ -48,12 +54,6 @@
 							<a href="<?php echo base_url(); ?>orders">
 								<i class="fa fa-shopping-cart"></i>
 								Orders
-							</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url(); ?>products">
-								<i class="fa fa-sitemap"></i>
-								Products
 							</a>
 						</li>
 					</ul>
@@ -82,7 +82,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="start active">
+				<li class="start">
 					<a href="javascript:;">
 						<i class="fa fa-gift"></i>
 						<span class="title">
