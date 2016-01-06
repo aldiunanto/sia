@@ -71,11 +71,11 @@
 		}
 	?>
 
-	<script src="<?php echo base_url('application/views/assets/scripts/' . $this->router->fetch_class() . '.js') ?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views/assets/scripts/exec.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/core/app.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/index.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/tasks.js" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/' . $this->router->fetch_class() . '.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/exec.js') ?>" type="text/javascript"></script>
 
 	<script>
 	jQuery(document).ready(function() {    
