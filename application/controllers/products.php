@@ -2,6 +2,10 @@
 
 class Products extends CI_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('products_model', '', true);
+	}
 	public function index()
 	{
 		$data = array(
