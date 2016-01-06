@@ -49,11 +49,6 @@
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-	
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
 
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/core/app.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/index.js" type="text/javascript"></script>
