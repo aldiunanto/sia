@@ -22,9 +22,7 @@
 		</div>
 		<!-- /.modal -->
 		<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-		<?php
-			include_once('style_customizer.php');
-		?>
+		<?php $this->load->view('parts/style_customizer') ?>
 		<!-- BEGIN PAGE HEADER-->
 		<div class="row">
 			<div class="col-md-12">

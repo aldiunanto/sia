@@ -26,15 +26,15 @@
 </head>
 <body class="page-header-fixed">
 
-	<?php include_once('parts/header.php') ?>
+	<?php $this->load->view('parts/header.php') ?>
 	<div class="clearfix"></div>
 
 	<div class="page-container">
-		<?php include_once('parts/sidebar.php') ?>
-		<?php include_once($content) ?>
+		<?php $this->load->view('parts/sidebar.php') ?>
+		<?php $this->load->view($content) ?>
 	</div>
 
-	<?php include_once('parts/footer.php') ?>
+	<?php $this->load->view('parts/footer.php') ?>
 
 	<!--[if lt IE 9]>
 	<script src="assets/plugins/respond.min.js"></script>
