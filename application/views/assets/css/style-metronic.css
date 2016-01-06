@@ -120,7 +120,7 @@ Buttons & Dropdown Buttons
 /*  Blue */
 
 .btn.blue {
-  color: white;  
+  color: #fff !important;
   text-shadow: none;	
   background-color: #4d90fe;
 }
