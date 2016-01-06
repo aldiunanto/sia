@@ -4,7 +4,7 @@ class Products extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('products_model', '', true);
+		$this->load->model('products_model', 'products', true);
 	}
 	public function index()
 	{
@@ -12,7 +12,8 @@ class Products extends CI_Controller {
 			'title'		=> 'Products',
 			'content'	=> 'products/index',
 			'js'		=> array('core/jquery.dataTables.min'),
-			'css'		=> array('jquery.dataTables')
+			'css'		=> array('jquery.dataTables'),
+			'fetch'		=> $this->products->fetch()
 		);
 
 		$this->load->view('base', $data);
