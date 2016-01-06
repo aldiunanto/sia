@@ -7,3 +7,21 @@ table tbody tr > td:nth-child(6), table tbody tr > td:nth-child(7),
 table tbody tr > td:nth-child(8), table tbody tr > td:nth-child(9){
 	text-align: right;
 }
+table thead th{ vertical-align: middle !important; }
+#product-list_paginate a.current{ background-color: #47A447; color: #fff; }
+select[name="product-list_length"], #product-list_filter input{
+	color: #333;
+	padding: 4px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: none;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+select[name="product-list_length"]:focus, #product-list_filter input:focus{
+  border-color: #999999;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+#product-list_filter input{ padding: 0 3px; }
