@@ -21,6 +21,16 @@
 	<link href="<?php echo base_url('application/views') ?>/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="<?php echo base_url('application/views') ?>/assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
 	<link href="<?php echo base_url('application/views') ?>/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+
+	<?php
+		if(! empty($css)){
+			foreach($css as $file){
+	?>
+				<link href="<?php echo base_url('application/views') ?>/assets/css/<?php echo $file ?>.css" rel="stylesheet" type="text/css"/>
+	<?php
+			}
+		}
+	?>
 	<link href="<?php echo base_url('application/views') ?>/assets/css/<?php echo $this->router->fetch_class() ?>.css" rel="stylesheet" type="text/css"/>
 	
 	<link rel="shortcut icon" href="<?php echo base_url('application/views') ?>/favicon.ico" />
@@ -50,6 +60,16 @@
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+
+	<?php
+		if(! empty($js)){
+			foreach($js as $file){
+	?>
+				<script src="<?php echo base_url('application/views/assets/scripts/' . $file) ?>" type="text/javascript"></script>
+	<?php
+			}
+		}
+	?>
 
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/core/app.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/index.js" type="text/javascript"></script>

@@ -6,7 +6,9 @@ class Products extends CI_Controller {
 	{
 		$data = array(
 			'title'		=> 'Products',
-			'content'	=> 'products/index'
+			'content'	=> 'products/index',
+			'js'		=> array('core/jquery.dataTables.min'),
+			'css'		=> array('jquery.dataTables')
 		);
 
 		$this->load->view('base', $data);
