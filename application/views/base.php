@@ -35,7 +35,7 @@
 	
 	<link rel="shortcut icon" href="<?php echo base_url('application/views') ?>/favicon.ico" />
 </head>
-<body class="page-header-fixed">
+<body class="page-header-fixed" data-controller="<?php echo $this->router->fetch_class() ?>" data-method="<?php echo $this->router->fetch_method() ?>">
 
 	<?php $this->load->view('parts/header.php') ?>
 	<div class="clearfix"></div>
@@ -71,6 +71,8 @@
 		}
 	?>
 
+	<script src="<?php echo base_url('application/views/assets/scripts/' . $this->router->fetch_class() . '.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/exec.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/core/app.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/index.js" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/tasks.js" type="text/javascript"></script>
