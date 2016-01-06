@@ -55,7 +55,7 @@
 				<div class="portlet">
 					<div class="portlet-body">
 						<div class="table-container">
-							<table class="table table-striped table-bordered table-hover">
+							<table class="table table-striped table-bordered table-hover" id="product-list">
 								<thead>
 									<tr role="row" class="heading">
 										<th rowspan="2">No</th>

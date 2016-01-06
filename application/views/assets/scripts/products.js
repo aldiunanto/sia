@@ -2,10 +2,14 @@ products = {
 
 	index: {
 		init: function(){
-			this._hello();
+			this._dataTables();
 		},
-		_hello: function(){
-			alert('Hello World');
+		_dataTables: function(){
+			$('#product-list').DataTable({
+				'aoColumnDefs': [
+					{ 'bSortable' : false, 'aTargets' : [0] }
+				]
+			});
 		}
 	}
 
