@@ -61,6 +61,34 @@
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-md-4">Seal Type</label>
+										<div class="col-md-8">
+											<select name="cat_id" class="form-control">
+												<option value="">-- Select --</option>
+												<?php foreach($seal_type->result() as $row) : ?>
+												<option value="<?php echo $row->st_id ?>"><?php echo $row->st_name ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-md-4">Packaging</label>
+										<div class="col-md-8">
+											<select name="cat_id" class="form-control">
+												<option value="">-- Select --</option>
+												<?php foreach($packs->result() as $row) : ?>
+												<option value="<?php echo $row->pack_id ?>"><?php echo $row->pack_name ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>

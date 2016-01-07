@@ -25,10 +25,15 @@ class Products extends CI_Controller {
 	}
 	public function add(){
 		$this->load->model('categories', 'category', true);
+		$this->load->model('seal_type', 'st', true);
+		$this->load->model('packaging', 'packs', true);
+
 		$data = array(
 			'title'			=> 'Add Product',
 			'content'		=> 'products/add',
-			'categories'	=> $this->category->fetch()
+			'categories'	=> $this->category->fetch(),
+			'seal_type'		=> $this->st->fetch(),
+			'packs'			=> $this->packs->fetch()
 		);
 
 		$this->load->view('base', $data);
