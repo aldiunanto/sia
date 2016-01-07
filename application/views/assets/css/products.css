@@ -24,4 +24,4 @@ select[name="product-list_length"]:focus, #product-list_filter input:focus{
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
-#product-list_filter input{ padding: 0 3px; }
+#product-list_filter input{ padding: 0 8px; }

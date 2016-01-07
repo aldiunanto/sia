@@ -74,102 +74,29 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>6</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>7</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
-									<tr>
-										<td>8</td>
-										<td>PE Solid</td>
-										<td>PE</td>
-										<td>Single</td>
-										<td>Sack</td>
-										<td>6.0</td>
-										<td>0.0</td>
-										<td>10.0</td>
-										<td>0.0020</td>
-										<td>No</td>
-									</tr>
+									<?php
+
+										$x = 0;
+										foreach($fetch as $row){
+									?>
+
+											<tr>
+												<td><?php echo ++$x ?></td>
+												<td><?php echo $row->prod_name ?></td>
+												<td><?php echo $row->cat_name ?></td>
+												<td><?php echo $row->st_name ?></td>
+												<td><?php echo $row->pack_name ?></td>
+												<td><?php echo $row->prod_width ?></td>
+												<td><?php echo $row->prod_guzzet ?></td>
+												<td><?php echo $row->prod_length ?></td>
+												<td><?php echo $row->prod_thickness ?></td>
+												<td><?php echo ($row->prod_emboss == 2 ? 'NO' : 'YES') ?></td>
+											</tr>
+
+									<?php
+										}
+
+									?>
 								</tbody>
 							</table>
 						</div>

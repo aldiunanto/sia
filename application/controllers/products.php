@@ -13,7 +13,7 @@ class Products extends CI_Controller {
 			'content'	=> 'products/index',
 			'js'		=> array('core/jquery.dataTables.min'),
 			'css'		=> array('jquery.dataTables'),
-			'fetch'		=> $this->products->fetch()
+			'fetch'		=> $this->products->fetch()->result()
 		);
 
 		$this->load->view('base', $data);
