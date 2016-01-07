@@ -14,5 +14,9 @@
 					 ->order_by('A.prod_name', 'ASC')
 					 ->get($this->tbl . ' AS A');
 		}
+		public function delete($prod_id){
+			return $this->db->where($this->primary, $prod_id)
+							->update($this->tbl, array('visibility' => 2));
+		}
 
 	}
