@@ -25,7 +25,7 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li <?php isActive('home') ?>>
-					<a href="<?php echo base_url(); ?>">
+					<a href="<?php echo base_url(); ?>" class="home">
 						<i class="fa fa-home"></i>
 						<span class="title">
 							Dashboard
