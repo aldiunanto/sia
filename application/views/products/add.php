@@ -34,6 +34,7 @@
 			<div class="col-md-12">
 				<div class="portlet">
 					<div class="portlet-body">
+						<div class="alert alert-danger numeric-error-msg">Error! <strong></strong> must be numeric.</div>
 						<form action="<?php echo site_url('products/store') ?>" method="post">
 							<fieldset>
 								<legend>General</legend>

@@ -38,5 +38,8 @@ class Products extends CI_Controller {
 
 		$this->load->view('base', $data);
 	}
+	public function store(){
+		print_r($_POST);
+	}
 
 }
