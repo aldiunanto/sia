@@ -65,6 +65,7 @@
 										<th rowspan="2">Packaging</th>
 										<th colspan="4">Size(cm)</th>
 										<th rowspan="2">Emboss Surface</th>
+										<th rowspan="2">Actions</th>
 									</tr>
 									<tr role="row" class="heading">
 										<th>Width</th>
@@ -91,6 +92,17 @@
 												<td><?php echo $row->prod_length ?></td>
 												<td><?php echo $row->prod_thickness ?></td>
 												<td><?php echo ($row->prod_emboss == 2 ? 'NO' : 'YES') ?></td>
+												<td>
+													<div class="btn-group">
+														<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="200">
+															<i class="fa fa-angle-down"></i>
+														</button>
+														<ul class="dropdown-menu pull-right">
+															<li><a href=""><i class="fa fa-edit"></i> Edit</a></li>
+															<li><a href=""><i class="fa fa-trash-o"></i> Delete</a></li>
+														</ul>
+													</div>
+												</td>
 											</tr>
 
 									<?php
