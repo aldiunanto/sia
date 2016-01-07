@@ -1,6 +1,6 @@
 <div class="page-content-wrapper">
 	<div class="page-content">
-		<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -98,8 +98,8 @@
 															<i class="fa fa-angle-down"></i>
 														</button>
 														<ul class="dropdown-menu pull-right">
-															<li><a href=""><i class="fa fa-edit"></i> Edit</a></li>
-															<li><a href=""><i class="fa fa-trash-o"></i> Delete</a></li>
+															<li><a href="<?php echo site_url('products/edit/' . $row->prod_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
+															<li><a href="<?php echo site_url('products/delete/' . $row->prod_id) ?>" class="delete"><i class="fa fa-trash-o"></i> Delete</a></li>
 														</ul>
 													</div>
 												</td>
