@@ -42,4 +42,4 @@ form .form-group{ margin-bottom: 20px; }
 form .form-group .radio-inline{
 	padding-top: 5px;
 }
-form .form-group .radio-inline:first-child{  }
+.portlet .numeric-error-msg{ display: none; }
