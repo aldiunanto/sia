@@ -14,6 +14,10 @@ products = {
 				$el.find('button.true').on('click', function(){
 					args.doAction();
 				});
+
+				if(typeof args.doSomething === 'function'){
+					args.doSomething();
+				}
 			});
 
 			$el.modal('show');
@@ -31,12 +35,16 @@ products = {
 			var self = this;
 			$('a.delete').on('click', function(e){
 				e.preventDefault();
+				var el = $(this);
 
 				self._callModal({
-					'title'		: 'Ini judul',
-					'body'		: 'Ini body',
-					'doAction'	: function(){
-						alert('You clicked OK');
+					'title'			: 'Confirmation',
+					'body'			: 'Do you really want to delete this Product?',
+					'doAction'		: function(){
+						window.location.href = el.attr('href');
+					},
+					'doSomething'	: function(){
+						$('.modal button.true').removeClass('blue').addClass('red').html('<i class="fa fa-trash-o"></i> Delete');
 					}
 				});
 			});
