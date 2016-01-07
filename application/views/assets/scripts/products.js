@@ -9,7 +9,7 @@ products = {
 				'pageLength'	: 20,
 				'sPageButton'	: 'btn btn-default',
 				'aoColumnDefs'	: [
-					{ 'bSortable' : false, 'aTargets' : [0] }
+					{ 'bSortable' : false, 'aTargets' : [0, 10] }
 				]
 			});
 		}
