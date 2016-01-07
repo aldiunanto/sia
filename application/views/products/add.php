@@ -32,6 +32,38 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
+				<div class="portlet">
+					<div class="portlet-body">
+						<form action="<?php echo site_url('products/store') ?>" method="post">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-md-3">Product Name*</label>
+										<div class="col-md-9">
+											<input type="text" class="form-control" required="required" name="prod_name" />
+											<!-- <span class="help-block">
+												 This field is required
+											</span> -->
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-md-3">Category</label>
+										<div class="col-md-9">
+											<select name="cat_id" class="form-control">
+												<option value="">-- Select --</option>
+												<?php foreach($categories->result() as $row) : ?>
+												<option value="<?php echo $row->cat_id ?>"><?php echo $row->cat_name ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
