@@ -12,7 +12,7 @@
 				</li>
 				<li class="sidebar-search-wrapper">
 					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search" action="<?php echo base_url(); ?>search" method="POST">
+					<form class="sidebar-search" action="<?php echo base_url() ?>search" method="POST">
 						<div class="form-container">
 							<div class="input-box">
 								<a href="javascript:;" class="remove">
@@ -25,7 +25,7 @@
 					<!-- END RESPONSIVE QUICK SEARCH FORM -->
 				</li>
 				<li <?php isActive('home') ?>>
-					<a href="<?php echo base_url(); ?>" class="home">
+					<a href="<?php echo site_url() ?>" class="home">
 						<i class="fa fa-home"></i>
 						<span class="title">
 							Dashboard
@@ -65,7 +65,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="<?php echo base_url(); ?>orders">
+							<a href="<?php echo site_url() ?>orders">
 								<i class="fa fa-shopping-cart"></i>
 								Orders
 							</a>
@@ -83,13 +83,13 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="<?php echo base_url(); ?>about">
+							<a href="<?php echo site_url() ?>about">
 								<i class="fa fa-group"></i>
 								About Us
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>contact">
+							<a href="<?php echo site_url() ?>contact">
 								<i class="fa fa-envelope-o"></i>
 								Contact Us
 							</a>
@@ -107,17 +107,17 @@
 					</a>
 					<ul class="sub-menu">
 						<li class="active">
-							<a href="<?php echo base_url(); ?>profile">
+							<a href="<?php echo site_url() ?>profile">
 								 User Profile
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>lock">
+							<a href="<?php echo site_url() ?>lock">
 								 Lock Screen
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo base_url(); ?>invoice">
+							<a href="<?php echo site_url() ?>invoice">
 								 Invoice
 							</a>
 						</li>

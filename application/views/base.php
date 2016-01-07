@@ -9,32 +9,32 @@
 	<meta content="" name="author" />
 
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url('application/views') ?>/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url('application/views') ?>/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url('application/views') ?>/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('application/views/assets/plugins/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('application/views/assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('application/views/assets/plugins/uniform/css/uniform.default.css') ?>" rel="stylesheet" type="text/css" />
 	
-	<link href="<?php echo base_url('application/views') ?>/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/pages/tasks.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/style-metronic.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/style.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/style-responsive.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/plugins.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/pages/tasks.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/themes/default.css') ?>" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="<?php echo base_url('application/views/assets/css/print.css') ?>" rel="stylesheet" type="text/css" media="print"/>
+	<link href="<?php echo base_url('application/views/assets/css/custom.css') ?>" rel="stylesheet" type="text/css"/>
 
 	<?php
 		if(! empty($css)){
 			foreach($css as $file){
 	?>
-				<link href="<?php echo base_url('application/views') ?>/assets/css/<?php echo $file ?>.css" rel="stylesheet" type="text/css"/>
+				<link href="<?php echo base_url('application/views/assets/css/' . $file . '.css') ?>" rel="stylesheet" type="text/css"/>
 	<?php
 			}
 		}
 	?>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/global.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo base_url('application/views') ?>/assets/css/<?php echo $this->router->fetch_class() ?>.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/global.css') ?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url('application/views/assets/css/' . $this->router->fetch_class() . '.css') ?>" rel="stylesheet" type="text/css"/>
 	
-	<link rel="shortcut icon" href="<?php echo base_url('application/views') ?>/favicon.ico" />
+	<link rel="shortcut icon" href="<?php echo base_url('application/views/favicon.ico') ?>" />
 </head>
 <body class="page-header-fixed page-sidebar-fixed" data-controller="<?php echo $this->router->fetch_class() ?>" data-method="<?php echo $this->router->fetch_method() ?>">
 
@@ -52,15 +52,15 @@
 	<script src="assets/plugins/respond.min.js"></script>
 	<script src="assets/plugins/excanvas.min.js"></script> 
 	<![endif]-->
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery-1.10.2.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery-migrate-1.2.1.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/bootstrap/js/bootstrap.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery.blockui.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/jquery.cokie.min.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/plugins/uniform/jquery.uniform.min.js') ?>" type="text/javascript"></script>
 
 	<?php
 		if(! empty($js)){
@@ -72,9 +72,9 @@
 		}
 	?>
 
-	<script src="<?php echo base_url('application/views') ?>/assets/scripts/core/app.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/index.js" type="text/javascript"></script>
-	<script src="<?php echo base_url('application/views') ?>/assets/scripts/custom/tasks.js" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/core/app.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/custom/index.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('application/views/assets/scripts/custom/tasks.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views/assets/scripts/' . $this->router->fetch_class() . '.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('application/views/assets/scripts/exec.js') ?>" type="text/javascript"></script>
 
