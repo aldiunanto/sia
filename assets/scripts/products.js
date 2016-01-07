@@ -49,6 +49,12 @@ products = {
 				});
 			});
 		}
+	},
+
+	add: {
+		init: function(){
+			
+		}
 	}
 
 }
