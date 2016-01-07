@@ -47,8 +47,8 @@
 							 Sidebar
 						</span>
 						<select class="sidebar-option form-control input-small">
-							<option value="fixed">Fixed</option>
-							<option value="default" selected="selected">Default</option>
+							<option value="fixed" selected="selected">Fixed</option>
+							<option value="default">Default</option>
 						</select>
 					</div>
 					<div class="theme-option">

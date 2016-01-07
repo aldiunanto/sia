@@ -35,7 +35,7 @@
 	
 	<link rel="shortcut icon" href="<?php echo base_url('application/views') ?>/favicon.ico" />
 </head>
-<body class="page-header-fixed" data-controller="<?php echo $this->router->fetch_class() ?>" data-method="<?php echo $this->router->fetch_method() ?>">
+<body class="page-header-fixed page-sidebar-fixed" data-controller="<?php echo $this->router->fetch_class() ?>" data-method="<?php echo $this->router->fetch_method() ?>">
 
 	<?php $this->load->view('parts/header.php') ?>
 	<div class="clearfix"></div>
