@@ -79,7 +79,7 @@
 									<?php
 
 										$x = 0;
-										foreach($fetch as $row){
+										foreach($fetch->result() as $row){
 									?>
 
 											<tr>
