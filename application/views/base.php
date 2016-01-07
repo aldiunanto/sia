@@ -31,6 +31,7 @@
 			}
 		}
 	?>
+	<link href="<?php echo base_url('application/views') ?>/assets/css/global.css" rel="stylesheet" type="text/css"/>
 	<link href="<?php echo base_url('application/views') ?>/assets/css/<?php echo $this->router->fetch_class() ?>.css" rel="stylesheet" type="text/css"/>
 	
 	<link rel="shortcut icon" href="<?php echo base_url('application/views') ?>/favicon.ico" />
