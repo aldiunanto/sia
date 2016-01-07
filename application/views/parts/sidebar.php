@@ -35,10 +35,23 @@
 					</a>
 				</li>
 				<li <?php isActive('products') ?>>
-					<a href="<?php echo base_url('products') ?>">
+					<a href="javascript:;">
 						<i class="fa fa-sitemap"></i>
-						Products
+						<span class="title">Products</span>
+						<span class="arrow"></span>
 					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo site_url('products') ?>">
+								<i class="fa fa-bars"></i> Data List
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('products/add') ?>">
+								<i class="fa fa-plus-square"></i> New Product
+							</a>
+						</li>
+					</ul>
 				</li>
 				<!--
 				<li>
