@@ -38,8 +38,8 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label col-md-3">Product Name*</label>
-										<div class="col-md-9">
+										<label class="control-label col-md-4">Product Name*</label>
+										<div class="col-md-8">
 											<input type="text" class="form-control" required="required" name="prod_name" />
 											<!-- <span class="help-block">
 												 This field is required
@@ -49,8 +49,8 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<label class="control-label col-md-3">Category</label>
-										<div class="col-md-9">
+										<label class="control-label col-md-4">Category</label>
+										<div class="col-md-8">
 											<select name="cat_id" class="form-control">
 												<option value="">-- Select --</option>
 												<?php foreach($categories->result() as $row) : ?>

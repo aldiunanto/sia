@@ -36,3 +36,5 @@ select[name="product-list_length"]:focus, #product-list_filter input:focus{
   box-shadow: none !important;
 }
 #product-list_filter input{ padding: 0 8px; }
+
+form .control-label{ text-align: right; }
