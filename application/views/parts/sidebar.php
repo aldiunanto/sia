@@ -12,7 +12,7 @@
 				</li>
 				<li class="sidebar-search-wrapper">
 					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search" action="<?php echo base_url() ?>search" method="POST">
+					<form class="sidebar-search" action="<?php echo site_url('search') ?>" method="POST">
 						<div class="form-container">
 							<div class="input-box">
 								<a href="javascript:;" class="remove">

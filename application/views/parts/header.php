@@ -3,13 +3,13 @@
 	<!-- BEGIN TOP NAVIGATION BAR -->
 	<div class="header-inner">
 		<!-- BEGIN LOGO -->
-		<a class="navbar-brand" href="<?php echo base_url(); ?>">
-			<img src="<?php echo base_url().'application/views/'; ?>assets/img/logo.png" alt="logo" class="img-responsive"/>
+		<a class="navbar-brand" href="<?php echo base_url() ?>">
+			<img src="<?php echo base_url('assets/img/logo.png') ?>" alt="logo" class="img-responsive"/>
 		</a>
 		<!-- END LOGO -->
 		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<img src="<?php echo base_url().'application/views/'; ?>assets/img/menu-toggler.png" alt=""/>
+			<img src="<?php echo base_url('assets/img/menu-toggler.png') ?>" alt=""/>
 		</a>
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN TOP NAVIGATION MENU -->
@@ -17,7 +17,7 @@
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="<?php echo base_url().'application/views/'; ?>assets/img/avatar1_small.jpg"/>
+					<img alt="" src="<?php echo base_url('assets/img/avatar1_small.jpg') ?>"/>
 					<span class="username">
 						 Admin
 					</span>
@@ -25,7 +25,7 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?php echo base_url(); ?>profile">
+						<a href="<?php echo site_url() ?>profile">
 							<i class="fa fa-user"></i> My Profile
 						</a>
 					</li>
@@ -37,12 +37,12 @@
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url(); ?>lock">
+						<a href="<?php echo site_url() ?>lock">
 							<i class="fa fa-lock"></i> Lock Screen
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url(); ?>login">
+						<a href="<?php echo site_url(); ?>login">
 							<i class="fa fa-key"></i> Log Out
 						</a>
 					</li>
