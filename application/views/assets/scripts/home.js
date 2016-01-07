@@ -1,0 +1,7 @@
+home = {
+
+	index: {
+		init: function(){}
+	}
+
+}
