@@ -6,8 +6,7 @@ class Products extends CI_Controller {
 		parent::__construct();
 		$this->load->model('products_model', 'products', true);
 	}
-	public function index()
-	{
+	public function index(){
 		$data = array(
 			'title'		=> 'Products',
 			'content'	=> 'products/index',
@@ -17,6 +16,12 @@ class Products extends CI_Controller {
 		);
 
 		$this->load->view('base', $data);
+	}
+	public function delete($prod_id){
+		$this->products->delete($prod_id);
+
+		$this->session->set_flashdata('deleted', '<div class="alert alert-success"><strong>Success!</strong> The product has been deleted.</div>');
+		redirect('products');
 	}
 
 }
