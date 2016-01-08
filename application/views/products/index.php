@@ -54,7 +54,7 @@
 				<!-- Begin: life time stats -->
 				<div class="portlet">
 					<div class="portlet-body">
-						<?php echo $this->session->flashdata('deleted') ?>
+						<?php echo $this->session->flashdata('message') ?>
 						<div class="table-container">
 							<table class="table table-striped table-bordered table-hover" id="product-list">
 								<thead>

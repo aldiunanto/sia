@@ -20,7 +20,7 @@ class Products extends CI_Controller {
 	public function delete($prod_id){
 		$this->product->delete($prod_id);
 
-		$this->session->set_flashdata('deleted', '<div class="alert alert-success"><strong>Success!</strong> The product has been deleted.</div>');
+		$this->session->set_flashdata('message', '<div class="alert alert-success"><strong>Success!</strong> The product has been deleted.</div>');
 		redirect('products');
 	}
 	public function add(){
@@ -52,9 +52,9 @@ class Products extends CI_Controller {
 			'visibility'	=> 1,
 			'created_at'	=> now(true)
 		);
-		$this->product->save();
+		$this->product->save($vals);
 
-		$this->session->set_flashdata('added', '<div class="alert alert-success">A new product successfully added.</div>');
+		$this->session->set_flashdata('message', '<div class="alert alert-success">A new product successfully added.</div>');
 		redirect('products');
 	}
 
