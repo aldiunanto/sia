@@ -57,5 +57,21 @@ class Products extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-success">A new product successfully added.</div>');
 		redirect('products');
 	}
+	public function edit($prod_id){
+		$this->load->model('categories', 'category', true);
+		$this->load->model('seal_type', 'st', true);
+		$this->load->model('packaging', 'packs', true);
+
+		$data = array(
+			'title'			=> 'Add Product',
+			'content'		=> 'products/edit',
+			'prod'			=> $this->product->fetch(array($this->product->primary => $prod_id))->row(),
+			'categories'	=> $this->category->fetch(),
+			'seal_type'		=> $this->st->fetch(),
+			'packs'			=> $this->packs->fetch()
+		);
+
+		$this->load->view('base', $data);
+	}
 
 }
