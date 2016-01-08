@@ -81,6 +81,12 @@ products = {
 				if(! error) this.submit();
 			});
 		}
+	},
+
+	edit: {
+		init: function(){
+			products.add._doSubmit();
+		}
 	}
 
 }
