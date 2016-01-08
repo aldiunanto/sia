@@ -18,5 +18,8 @@
 			return $this->db->where($this->primary, $prod_id)
 							->update($this->tbl, array('visibility' => 2));
 		}
+		public function save($vals){
+			return $this->db->insert($this->tbl, $vals);
+		}
 
 	}

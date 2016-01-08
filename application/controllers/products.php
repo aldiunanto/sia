@@ -39,7 +39,23 @@ class Products extends CI_Controller {
 		$this->load->view('base', $data);
 	}
 	public function store(){
-		print_r($_POST);
+		$vals = array(
+			'cat_id'		=> $this->input->post('cat_id'),
+			'st_id'			=> $this->input->post('st_id'),
+			'pack_id'		=> $this->input->post('pack_id'),
+			'prod_name'		=> trim($this->input->post('prod_name')),
+			'prod_width'	=> trim($this->input->post('prod_width')),
+			'prod_guzzet'	=> trim($this->input->post('prod_guzzet')),
+			'prod_length'	=> trim($this->input->post('prod_length')),
+			'prod_thickness'=> trim($this->input->post('prod_thickness')),
+			'prod_emboss'	=> $this->input->post('prod_emboss'),
+			'visibility'	=> 1,
+			'created_at'	=> now(true)
+		);
+		$this->product->save();
+
+		$this->session->set_flashdata('added', '<div class="alert alert-success">A new product successfully added.</div>');
+		redirect('products');
 	}
 
 }
