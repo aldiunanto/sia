@@ -33,7 +33,7 @@ products = {
 		},
 		_deleteProducts: function(){
 			var self = this;
-			$('a.delete').on('click', function(e){
+			$('#product-list').on('click', 'a.delete', function(e){
 				e.preventDefault();
 				var el = $(this);
 
