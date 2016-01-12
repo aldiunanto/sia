@@ -89,7 +89,7 @@
 															<i class="fa fa-angle-down"></i>
 														</button>
 														<ul class="dropdown-menu pull-right">
-															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>"><i class="fa fa-eye"></i> Detail</a></li>
+															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>" class="detail"><i class="fa fa-eye"></i> Detail</a></li>
 															<li><a href="<?php echo site_url('salesorder/edit/' . $row->so_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
 															<li><a href="<?php echo site_url('printing/so/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print SO</a></li>
 															<li class="divider"></li>
