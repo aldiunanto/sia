@@ -40,7 +40,7 @@ class Users extends CI_Controller {
                 if ($this->session->flashdata('page')){
                     $this->session->set_flashdata('page',$page);
                 }
-                redirect('user/login');
+                redirect('users/login');
             }
         }
 	}
