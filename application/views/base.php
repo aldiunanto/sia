@@ -75,6 +75,7 @@
 	<script src="<?php echo base_url('assets/scripts/core/app.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/scripts/custom/index.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/scripts/custom/tasks.js') ?>" type="text/javascript"></script>
+	<script src="<?php echo base_url('assets/scripts/libs.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/scripts/' . $this->router->fetch_class() . '.js') ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('assets/scripts/exec.js') ?>" type="text/javascript"></script>
 

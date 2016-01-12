@@ -5,23 +5,6 @@ products = {
 			this._dataTables();
 			this._deleteProducts();
 		},
-		_callModal: function(args){
-			$el = $('.modal');
-			$el.on('show.bs.modal', function(){
-				$el.find('.modal-title').html(args.title);
-				$el.find('.modal-body').html(args.body);
-
-				$el.find('button.true').on('click', function(){
-					args.doAction();
-				});
-
-				if(typeof args.doSomething === 'function'){
-					args.doSomething();
-				}
-			});
-
-			$el.modal('show');
-		},
 		_dataTables: function(){
 			$('#product-list').DataTable({
 				'pageLength'	: 20,
@@ -32,12 +15,11 @@ products = {
 			});
 		},
 		_deleteProducts: function(){
-			var self = this;
 			$('#product-list').on('click', 'a.delete', function(e){
 				e.preventDefault();
 				var el = $(this);
 
-				self._callModal({
+				LIBS.callModal({
 					'title'			: 'Confirmation',
 					'body'			: 'Do you really want to delete this Product?',
 					'doAction'		: function(){
