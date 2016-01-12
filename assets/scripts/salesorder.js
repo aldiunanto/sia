@@ -1,0 +1,9 @@
+salesorder = {
+
+	index: {
+		init: function(){
+			
+		}
+	}
+
+}
