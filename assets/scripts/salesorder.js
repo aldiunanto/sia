@@ -13,12 +13,6 @@ salesorder = {
 					{ 'bSortable' : false, 'aTargets' : [0, 7] }
 				]
 			});
-		},
-		_seeDetail: function(){
-			$('#so-list').on('click', 'a.detail', function(e){
-				e.preventDefault();
-				alert('asd');
-			})
 		}
 	}
 
