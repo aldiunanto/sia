@@ -1,0 +1,45 @@
+table thead th, table tbody tr > td:first-child,
+table tbody tr > td:nth-child(3), table tbody tr > td:nth-child(4),
+table tbody tr > td:nth-child(5), table tbody tr > td:nth-child(10),
+table tbody tr > td:last-child{
+	text-align: center;
+}
+table tbody tr > td:last-child .btn-group{ text-align: left; }
+table tbody tr > td:nth-child(6), table tbody tr > td:nth-child(7),
+table tbody tr > td:nth-child(8), table tbody tr > td:nth-child(9){
+	text-align: right;
+}
+table tbody tr > td:last-child a.dropdown-toggle{
+	text-align: center;
+}
+table tbody tr > td:last-child .fa{ text-align: left; }
+table td{ vertical-align: middle !important; }
+table thead th{ vertical-align: middle !important; }
+#product-list_paginate a.current{
+	background-color: #47A447;
+	color: #fff;
+	border: 1px solid #47A447;
+}
+select[name="product-list_length"], #product-list_filter input{
+	color: #333;
+	padding: 4px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: none;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+select[name="product-list_length"]:focus, #product-list_filter input:focus{
+  border-color: #999999;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+#product-list_filter input{ padding: 0 8px; }
+
+form .control-label{ text-align: right; margin-top: 5px; }
+form .form-group{ margin-bottom: 20px; }
+form .form-group .radio-inline{
+	padding-top: 5px;
+}
+.portlet .numeric-error-msg{ display: none; }
