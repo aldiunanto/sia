@@ -1,6 +1,6 @@
 <div class="page-content-wrapper">
 	<div class="page-content">
-		<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal fade" id="basic" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -14,6 +14,18 @@
 						<button type="button" class="btn blue true">Save changes</button>
 						<button type="button" class="btn default" data-dismiss="modal">Close</button>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="ajax" role="basic" aria-hidden="true">
+			<div class="page-loading page-loading-boxed">
+				<img src="<?php echo base_url('assets/img/loading-spinner-grey.gif') ?>" alt="" class="loading">
+				<span>
+					&nbsp;&nbsp;Loading...
+				</span>
+			</div>
+			<div class="modal-dialog">
+				<div class="modal-content">
 				</div>
 			</div>
 		</div>
@@ -89,7 +101,7 @@
 															<i class="fa fa-angle-down"></i>
 														</button>
 														<ul class="dropdown-menu pull-right">
-															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>" class="detail"><i class="fa fa-eye"></i> Detail</a></li>
+															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>" class="detail" data-target="#ajax" data-toggle="modal"><i class="fa fa-eye"></i> Detail</a></li>
 															<li><a href="<?php echo site_url('salesorder/edit/' . $row->so_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
 															<li><a href="<?php echo site_url('printing/so/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print SO</a></li>
 															<li class="divider"></li>

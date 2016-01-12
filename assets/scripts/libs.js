@@ -1,7 +1,7 @@
 LIBS = {
 
-	callModal: function(args){
-		$el = $('.modal');
+	callModal: function(el, args){
+		$el = $(el);
 		$el.on('show.bs.modal', function(){
 			$el.find('.modal-title').html(args.title);
 			$el.find('.modal-body').html(args.body);

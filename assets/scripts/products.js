@@ -19,7 +19,7 @@ products = {
 				e.preventDefault();
 				var el = $(this);
 
-				LIBS.callModal({
+				LIBS.callModal('.modal', {
 					'title'			: 'Confirmation',
 					'body'			: 'Do you really want to delete this Product?',
 					'doAction'		: function(){
