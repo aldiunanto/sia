@@ -39,6 +39,8 @@
 						<i class="fa fa-sitemap"></i>
 						<span class="title">Products</span>
 						<span class="arrow"></span>
+						<span class="selected">
+						</span>
 					</a>
 					<ul class="sub-menu">
 						<li>
@@ -52,6 +54,13 @@
 							</a>
 						</li>
 					</ul>
+				</li>
+				<li <?php isActive('salesorder') ?>>
+					<a href="<?php echo site_url('salesorder') ?>">
+						<i class="fa fa-shopping-cart"></i>
+						<span class="title">Sales Order</span>
+						<span class="selected"></span>
+					</a>
 				</li>
 				<!--
 				<li>
