@@ -7,3 +7,7 @@
 	function now($date = false){
 		return date('Y-m-d' . ($date ? ' H:i:s' : ''));
 	}
+	function to_indDate($date){
+		$path = explode('-', $date);
+        return $path[2] . '-' . $path[1] . '-' . $path[0];
+	}

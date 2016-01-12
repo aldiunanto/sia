@@ -81,8 +81,8 @@
 												<td><?php echo ($row->so_type == 1 ? 'PPN' : 'Non-PPN') ?></td>
 												<td><?php echo $row->sales_name ?></td>
 												<td><?php echo $row->cust_name ?></td>
-												<td><?php echo $row->so_date ?></td>
-												<td><?php echo $row->so_deliv_req ?></td>
+												<td><?php echo to_indDate($row->so_date) ?></td>
+												<td><?php echo to_indDate($row->so_deliv_req) ?></td>
 												<td>
 													<div class="btn-group">
 														<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="200">
