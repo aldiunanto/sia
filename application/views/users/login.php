@@ -1,7 +1,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="<?=current_url()?>" method="post">
+	<form class="login-form" action="<?php echo current_url() ?>" method="post">
 		<h3 class="form-title">Login to your account</h3>
 		<div class="alert alert-danger display-hide">
 			<button class="close" data-close="alert"></button>
