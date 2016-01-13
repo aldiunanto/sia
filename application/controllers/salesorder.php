@@ -27,5 +27,11 @@
 
 			$this->load->view('salesorder/detail', $data);
 		}
+		public function delete($prod_id){
+			$this->so->delete($prod_id);
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success"><strong>Success!</strong> The Sales Order has been deleted.</div>');
+			redirect('salesorder');
+		}
 
 	}
