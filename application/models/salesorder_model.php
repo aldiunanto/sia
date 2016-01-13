@@ -15,5 +15,15 @@
 
 			return $this->db->order_by('A.created_at', 'DESC')->get($this->tbl . ' AS A');	
 		}
+		public function delete($so_id){
+			return $this->db->where($this->primary, $so_id)
+							->update($this->tbl, array('visibility' => 2));
+		}
+		public function create($vals){
+			return $this->db->insert($this->tbl, $vals);
+		}
+		public function save($so_id, $args){
+			return $this->db->where($this->primary, $so_id)->update($this->tbl, $args);
+		}
 
 	}
