@@ -33,5 +33,16 @@
 			$this->session->set_flashdata('message', '<div class="alert alert-success"><strong>Success!</strong> The Sales Order has been deleted.</div>');
 			redirect('salesorder');
 		}
+		public function add(){
+			$this->load->model('sales_model', 'sales', true);
+
+			$data = array(
+				'title'		=> 'Add New SO',
+				'content'	=> 'salesorder/add',
+				'sales'		=> $this->sales->fetch()
+			);
+
+			$this->load->view('base', $data);
+		}
 
 	}
