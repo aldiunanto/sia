@@ -5,9 +5,9 @@ class Users extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('users_model', 'users', true);
+		$this->load->library(array('access','form_validation'));
 	}
 	function login(){
-		$this->load->library(array('access','form_validation'));
 		if (!empty($this->data_session['userdata'])){
             redirect('home');
         }
@@ -44,13 +44,17 @@ class Users extends CI_Controller {
             }
         }
 	}
+	function logout(){
+		$this->access->logout();
+        redirect('users/login');
+	}
 	public function index(){
 		$data = array(
 			'title'		=> 'Users',
 			'content'	=> 'users/index',
 			'js'		=> array('core/jquery.dataTables.min'),
 			'css'		=> array('jquery.dataTables'),
-			'fetch'		=> $this->users->fetch()
+			'fetch'		=> $this->users->fetch('user_status != 0')
 		);
 
 		$this->load->view('base', $data);
@@ -69,11 +73,28 @@ class Users extends CI_Controller {
 
 		$this->load->view('base', $data);
 	}
+	function cek_username(){
+        if($_POST['user_uniq_name']){
+            $data_user = $this->users->fetch('user_uniq_name = "'.$_POST['user_uniq_name'].'"')->row();
+            if(!empty($data_user)){
+                $data['status'] = false ; $data['message'] = 'Tidak tersedia';
+            } else {
+                $data['status'] = true ; $data['message'] = 'Tersedia';
+            }
+        } else {
+            $data['status'] = false ;
+            $data['message'] = 'Sorry, user_uniq_name parameter not found!';
+        }
+        header('Content-Type: application/json');
+        echo json_encode($data);
+    }
 	public function store(){
 		$vals = array(
 			'user_fullname'		=> $this->input->post('user_fullname'),
 			'user_email'	=> $this->input->post('user_email'),
 			'user_status'	=> $this->input->post('user_status'),
+			'user_uniq_name'=> $this->input->post('user_uniq_name'),
+			'user_password'	=> md5($this->input->post('user_password')),
 			'created_at'	=> now(true)
 		);
 		$this->users->create($vals);
@@ -97,6 +118,9 @@ class Users extends CI_Controller {
 			'user_email'	=> $this->input->post('user_email'),
 			'user_status'	=> $this->input->post('user_status'),
 		);
+		if(!empty($_POST['user_password'])){
+			$vals += array('user_password'	=> md5($this->input->post('user_password')));
+		}
 		$this->users->save($user_id, $vals);
 
 		$this->session->set_flashdata('message', '<div class="alert alert-info"><strong>Success!</strong> The user has been updated.</div>');

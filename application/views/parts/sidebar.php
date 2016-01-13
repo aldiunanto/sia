@@ -11,7 +11,7 @@
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 				</li>
 				<li class="sidebar-search-wrapper">
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM
 					<form class="sidebar-search" action="<?php echo site_url('search') ?>" method="POST">
 						<div class="form-container">
 							<div class="input-box">
@@ -51,6 +51,27 @@
 						<li>
 							<a href="<?php echo site_url('products/add') ?>">
 								<i class="fa fa-plus-square"></i> New Product
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li <?php isActive('users') ?>>
+					<a href="javascript:;">
+						<i class="fa fa-user"></i>
+						<span class="title">Users</span>
+						<span class="arrow"></span>
+						<span class="selected">
+						</span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo site_url('users') ?>">
+								<i class="fa fa-bars"></i> Data List
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('users/add') ?>">
+								<i class="fa fa-plus-square"></i> New User
 							</a>
 						</li>
 					</ul>

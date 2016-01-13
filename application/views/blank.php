@@ -83,12 +83,34 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo base_url('assets/scripts/custom/login-soft.js') ?>" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-		jQuery(document).ready(function() {     
-		  App.init();
-		  Login.init();
-		});
-	</script>
+	jQuery(document).ready(function() {  
+		<?php if($this->session->flashdata('success') || $this->session->flashdata('error'))  : ?>
+		$('#message').modal({
+          show: true,
+        });
+        <?php endif; ?>
+	  App.init();
+	  Login.init();
+	});
+</script>
 <!-- END JAVASCRIPTS -->
+<div id="message" class="modal modal-styled fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title">Message</h3>
+      </div>
+      <div class="modal-body" id='message_content'>
+        <p><?=$this->session->flashdata('success').$this->session->flashdata('error')?></p>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-tertiary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </body>
 <!-- END BODY -->
 </html>

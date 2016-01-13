@@ -12,7 +12,7 @@
 		}
 		public function delete($prod_id){
 			return $this->db->where($this->primary, $prod_id)
-							->update($this->tbl, array('visibility' => 2));
+							->update($this->tbl, array('user_status' => 0));
 		}
 		public function create($vals){
 			return $this->db->insert($this->tbl, $vals);

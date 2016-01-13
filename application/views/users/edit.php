@@ -105,7 +105,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-4">Password*</label>
 											<div class="col-md-8">
-												<input type="password" class="form-control" required="required" name="user_password" value="<?php echo $user->user_password ?>" />
+												<input type="password" class="form-control" name="user_password" />
 												<span class="help-block">
 													 This field is required
 												</span>
@@ -126,3 +126,20 @@
 		</div>
 	</div>
 </div>
+	<div id="message" class="modal modal-styled fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h3 class="modal-title">Message</h3>
+	      </div>
+	      <div class="modal-body" id='message_content'>
+	        <p><?=$this->session->flashdata('success').$this->session->flashdata('error')?></p>
+	      </div>
+	      <div class="modal-footer">
+	        <!-- <button type="button" class="btn btn-tertiary" data-dismiss="modal">Close</button> -->
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

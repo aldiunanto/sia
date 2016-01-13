@@ -35,19 +35,30 @@ class Access {
                         $userdata_sess = array(
                             'user_id' => $result->user_id,
                             'user_email' => $result->user_email,
-                            'user_username' => $result->user_username,
+                            'user_uniq_name' => $result->user_uniq_name,
                             'user_fullname' => $result->user_fullname,
+                            'user_level' => $result->user_level,
                         );
                         $this->CI->session->set_userdata('userdata',$userdata_sess);
-                        return TRUE;                    
+                        return TRUE;
+//                    } else {
+//                        $this->CI->session->set_flashdata('error','Sorry, you are not authorized as administrator.');
+//                        return FALSE;
+//                    }
+                    
                 } else {
-                    $this->CI->session->set_flashdata('error','Maaf, password yang anda masukan salah!');
+//                    $this->CI->session->set_flashdata('error','Password did not match.<br>Use forgot password to recover your password.');
+                    $this->CI->session->set_flashdata('error','Sorry, your password is wrong!');
                     return FALSE;
                 }
             } else {
-                $this->CI->session->set_flashdata('error','Maaf, akun anda belum aktif!');
+//                $this->CI->session->set_flashdata('error','Your account has not been validated.<br>Please check your email.');
+                $this->CI->session->set_flashdata('error','Sorry, your account is not active!');
                 return FALSE;
             }
+        } else {
+            $this->CI->session->set_flashdata('error','Sorry, your username is not valid!');
+            return FALSE;
         }
     }
     

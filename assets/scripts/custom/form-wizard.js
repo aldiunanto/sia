@@ -10,7 +10,7 @@ var FormWizard = function () {
 
             function format(state) {
                 if (!state.id) return state.text; // optgroup
-                return "<img class='flag' src='assets/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+                return "<img class='flag' src='http://sia.tossaro.com/assets/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
             }
 
             $("#country_list").select2({
@@ -34,42 +34,66 @@ var FormWizard = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
                     //account
-                    username: {
+                    sales_username: {
+                        minlength: 5,
+						maxlength: 50,
+                        required: true
+                    },
+                    sales_pwd: {
                         minlength: 5,
                         required: true
                     },
-                    password: {
-                        minlength: 5,
-                        required: true
-                    },
-                    rpassword: {
+                    sales_cpwd: {
                         minlength: 5,
                         required: true,
-                        equalTo: "#submit_form_password"
+                        equalTo: "#sales_pwd"
                     },
-                    //profile
-                    fullname: {
-                        required: true
+					edit_sales_pwd: {
+                        minlength: 5,
+                        required: false
                     },
-                    email: {
+					edit_sales_npwd: {
+                        minlength: 5,
+                        required: false
+                    },
+                    edit_sales_ncpwd: {
+                        minlength: 5,
+                        required: false,
+                        equalTo: "#edit_sales_npwd"
+                    },
+                    sales_email: {
                         required: true,
+						maxlength: 50,
                         email: true
                     },
-                    phone: {
+                    //profile
+                    sales_fname: {
+                        required: true,
+						maxlength: 50
+                    },
+                    sales_lname: {
+                        required: true,
+						maxlength: 50
+                    },
+                    sales_phone: {
+						maxlength: 50,
                         required: true
                     },
-                    gender: {
+                    sales_gender: {
                         required: true
                     },
-                    address: {
+                    sales_address: {
+						maxlength: 250,
                         required: true
                     },
-                    city: {
+                    sales_city: {
+						maxlength: 50,
                         required: true
                     },
-                    country: {
+                    sales_reg: {
                         required: true
                     },
+					/*
                     //payment
                     card_name: {
                         required: true
@@ -92,6 +116,7 @@ var FormWizard = function () {
                         required: true,
                         minlength: 1
                     }
+					*/
                 },
 
                 messages: { // custom messages for radio buttons and checkboxes
@@ -102,8 +127,8 @@ var FormWizard = function () {
                 },
 
                 errorPlacement: function (error, element) { // render error placement for each input type
-                    if (element.attr("name") == "gender") { // for uniform radio buttons, insert the after the given container
-                        error.insertAfter("#form_gender_error");
+                    if (element.attr("name") == "sales_gender") { // for uniform radio buttons, insert the after the given container
+                        error.insertAfter("#sales_gender_error");
                     } else if (element.attr("name") == "payment[]") { // for uniform radio buttons, insert the after the given container
                         error.insertAfter("#form_payment_error");
                     } else {
@@ -128,7 +153,7 @@ var FormWizard = function () {
                 },
 
                 success: function (label) {
-                    if (label.attr("for") == "gender" || label.attr("for") == "payment[]") { // for checkboxes and radio buttons, no need to show OK icon
+                    if (label.attr("for") == "sales_gender" || label.attr("for") == "payment[]") { // for checkboxes and radio buttons, no need to show OK icon
                         label
                             .closest('.form-group').removeClass('has-error').addClass('has-success');
                         label.remove(); // remove error label here
@@ -148,7 +173,7 @@ var FormWizard = function () {
             });
 
             var displayConfirm = function() {
-                $('#tab4 .form-control-static', form).each(function(){
+                $('#tab3 .form-control-static', form).each(function(){
                     var input = $('[name="'+$(this).attr("data-display")+'"]', form);
                     if (input.is(":radio")) {
                         input = $('[name="'+$(this).attr("data-display")+'"]:checked', form);
@@ -213,8 +238,7 @@ var FormWizard = function () {
                 onNext: function (tab, navigation, index) {
                     success.hide();
                     error.hide();
-
-                    if (form.valid() == false) {
+					if (form.valid() == false) {
                         return false;
                     }
 
@@ -237,9 +261,7 @@ var FormWizard = function () {
             });
 
             $('#form_wizard_1').find('.button-previous').hide();
-            $('#form_wizard_1 .button-submit').click(function () {
-                alert('Finished! Hope you like it :)');
-            }).hide();
+            $('#form_wizard_1 .button-submit').hide();
         }
 
     };

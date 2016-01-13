@@ -43,7 +43,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-4">User Uniq Name*</label>
 											<div class="col-md-8">
-												<input type="text" class="form-control" required="required" name="user_uniq_name" />
+												<input type="text" class="form-control" required="required" name="user_uniq_name" id="user_uniq_name" required onchange='cek_user_uniq_name()' />
 												<span class="help-block">
 													 This field is required
 												</span>
@@ -55,7 +55,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-4">User Status*</label>
 											<div class="col-md-8">
-												<select name="cat_id" class="form-control" required="required">
+												<select name="user_status" class="form-control" required="required">
 													<option value="">-- Select --</option>
 													<option value="1">Not Active</option>
 													<option value="2">Active</option>
@@ -73,7 +73,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-4">User Full Name*</label>
 											<div class="col-md-8">
-												<input type="text" class="form-control" required="required" name="user_fullname" />
+												<input type="text" class="form-control" required="required" id="user_fullname" name="user_fullname" />
 												<span class="help-block">
 													 This field is required
 												</span>
@@ -123,3 +123,48 @@
 		</div>
 	</div>
 </div>
+<script>
+function cek_user_uniq_name(){
+    if($('#user_uniq_name').val().length<5){
+      $('#message_content').html('Sorry, user uniq name must be more than 5 character!');
+      $('#message').modal({
+        show: true,
+      });
+      $('#message').on('hidden.bs.modal', function () {
+        $('#user_uniq_name').focus();
+      });
+      return;
+    }  
+  	$.post( "<?=site_url('users/cek_username')?>",{ user_uniq_name: $('#user_uniq_name').val() }, function( data ) {
+    if(data.status==true){
+        focus = '#user_fullname'; message = 'Yeayy! User uniq name is available';
+  	} else {
+        focus = '#user_uniq_name';  message = 'Sorry, User uniq name not available!';
+  	}
+    $('#message_content').html(message);
+    $('#message').modal({
+      show: true,
+    });
+    $('#message').on('hidden.bs.modal', function () {
+      $(focus).focus();
+    });    
+  });
+}
+</script>
+	<div id="message" class="modal modal-styled fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h3 class="modal-title">Message</h3>
+	      </div>
+	      <div class="modal-body" id='message_content'>
+	        <p><?=$this->session->flashdata('success').$this->session->flashdata('error')?></p>
+	      </div>
+	      <div class="modal-footer">
+	        <!-- <button type="button" class="btn btn-tertiary" data-dismiss="modal">Close</button> -->
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

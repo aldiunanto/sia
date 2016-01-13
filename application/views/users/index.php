@@ -1,22 +1,5 @@
 <div class="page-content-wrapper">
 	<div class="page-content">
-		<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-						<h4 class="modal-title">Modal title</h4>
-					</div>
-					<div class="modal-body">
-						 Widget settings form goes here
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn blue true">Save changes</button>
-						<button type="button" class="btn default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<?php $this->load->view('parts/style_customizer') ?>
 
@@ -103,3 +86,20 @@
 		</div>
 	</div>
 </div>
+	<div id="message" class="modal modal-styled fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h3 class="modal-title">Message</h3>
+	      </div>
+	      <div class="modal-body" id='message_content'>
+	        <p><?=$this->session->flashdata('success').$this->session->flashdata('error')?></p>
+	      </div>
+	      <div class="modal-footer">
+	        <!-- <button type="button" class="btn btn-tertiary" data-dismiss="modal">Close</button> -->
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

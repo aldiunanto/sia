@@ -1,3 +1,4 @@
+<?php $userdata = $this->session->userdata('userdata'); ?>
 <!-- BEGIN HEADER -->
 <div class="header navbar navbar-fixed-top">
 	<!-- BEGIN TOP NAVIGATION BAR -->
@@ -17,32 +18,32 @@
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="<?php echo base_url('assets/img/avatar1_small.jpg') ?>"/>
+					<!-- <img alt="" src="<?php echo base_url('assets/img/avatar1_small.jpg') ?>"/> -->
 					<span class="username">
-						 Admin
+						 <?=$userdata['user_fullname']?>
 					</span>
 					<i class="fa fa-angle-down"></i>
 				</a>
 				<ul class="dropdown-menu">
-					<li>
-						<a href="<?php echo site_url() ?>profile">
+					<!-- <li>
+						<a href="<?php echo site_url('users/profile') ?>">
 							<i class="fa fa-user"></i> My Profile
 						</a>
 					</li>
 					<li class="divider">
-					</li>
+					</li> -->
 					<li>
 						<a href="javascript:;" id="trigger_fullscreen">
 							<i class="fa fa-arrows"></i> Full Screen
 						</a>
 					</li>
-					<li>
-						<a href="<?php echo site_url() ?>lock">
+					<!-- <li>
+						<a href="<?php echo site_url() ?>">
 							<i class="fa fa-lock"></i> Lock Screen
 						</a>
-					</li>
+					</li> -->
 					<li>
-						<a href="<?php echo site_url(); ?>login">
+						<a href="<?php echo site_url('users/logout'); ?>">
 							<i class="fa fa-key"></i> Log Out
 						</a>
 					</li>
