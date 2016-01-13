@@ -55,7 +55,7 @@
 				<div class="portlet">
 					<div class="portlet-body">
 						<?php echo $this->session->flashdata('message') ?>
-						<div class="table-container">
+						<div class="table-container table-responsive">
 							<script type="text/javascript" src="<?php echo base_url('assets/plugins/jquery-validation/dist/jquery.validate.min.js'); ?>"></script>
 							<script type="text/javascript" src="<?php echo base_url('assets/plugins/flot/jquery.min.js'); ?>"></script>
 							<table class="table table-striped table-bordered table-hover" id="sales-list">
