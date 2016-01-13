@@ -4,7 +4,9 @@
 
 		public function __construct(){
 			parent::__construct();
+
 			$this->load->model('salesorder_model', 'so', true);
+			$this->load->model('salesorder_sub', 'sos', true);
 		}
 		public function index(){
 			$data = array(

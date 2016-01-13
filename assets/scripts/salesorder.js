@@ -3,7 +3,6 @@ salesorder = {
 	index: {
 		init: function(){
 			this._dataTables();
-			this._seeDetail();
 		},
 		_dataTables: function(){
 			$('#so-list').DataTable({
