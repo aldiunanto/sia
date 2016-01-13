@@ -17,14 +17,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="ajax" role="basic" aria-hidden="true">
+		<div class="modal fade bs-modal-lg" id="ajax" role="basic" aria-hidden="true">
 			<div class="page-loading page-loading-boxed">
 				<img src="<?php echo base_url('assets/img/loading-spinner-grey.gif') ?>" alt="" class="loading">
 				<span>
 					&nbsp;&nbsp;Loading...
 				</span>
 			</div>
-			<div class="modal-dialog">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 				</div>
 			</div>
