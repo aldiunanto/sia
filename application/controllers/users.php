@@ -4,6 +4,8 @@ class Users extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->data_session = $this->session->all_userdata();
+		
 		$this->load->model('users_model', 'users', true);
 		$this->load->library(array('access','form_validation'));
 	}
