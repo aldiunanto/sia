@@ -18,12 +18,6 @@
 			</div>
 		</div>
 		<div class="modal fade bs-modal-lg" id="ajax" role="basic" aria-hidden="true">
-			<div class="page-loading page-loading-boxed">
-				<img src="<?php echo base_url('assets/img/loading-spinner-grey.gif') ?>" alt="" class="loading">
-				<span>
-					&nbsp;&nbsp;Loading...
-				</span>
-			</div>
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 				</div>
@@ -105,7 +99,7 @@
 															<li><a href="<?php echo site_url('salesorder/edit/' . $row->so_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
 															<li><a href="<?php echo site_url('printing/so/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print SO</a></li>
 															<li class="divider"></li>
-															<li><a href="<?php echo site_url('salesorder/delete/' . $row->so_id) ?>"><i class="fa fa-trash-o"></i> Delete</a></li>
+															<li><a href="<?php echo site_url('salesorder/delete/' . $row->so_id) ?>" class="delete"><i class="fa fa-trash-o"></i> Delete</a></li>
 														</ul>
 													</div>
 												</td>

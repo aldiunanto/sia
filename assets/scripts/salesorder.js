@@ -19,14 +19,14 @@ salesorder = {
 				e.preventDefault();
 				var el = $(this);
 
-				LIBS.callModal('.modal', {
+				LIBS.callModal('#basic', {
 					'title'			: 'Confirmation',
 					'body'			: 'Do you really want to delete this Sales Order?',
 					'doAction'		: function(){
 						window.location.href = el.attr('href');
 					},
 					'doSomething'	: function(){
-						$('.modal button.true').removeClass('blue').addClass('red').html('<i class="fa fa-trash-o"></i> Delete');
+						$('#basic button.true').removeClass('blue').addClass('red').html('<i class="fa fa-trash-o"></i> Delete');
 					}
 				});
 			});
