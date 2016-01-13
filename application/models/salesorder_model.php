@@ -6,7 +6,7 @@
 		public 		$primary	= 'so_id';
 
 		public function fetch($where = null){
-			$this->db->select('A.*, B.sales_name, C.cust_name')
+			$this->db->select('A.*, B.sales_fname, B.sales_lname, C.cust_name')
 					 ->join('sales AS B', 'A.sales_id = B.sales_id', 'INNER')
 					 ->join('customer AS C', 'A.cust_id = C.cust_id', 'INNER')
 					 ->where('A.visibility', 1);

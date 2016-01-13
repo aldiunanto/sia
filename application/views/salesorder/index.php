@@ -91,7 +91,7 @@
 												<td><?php echo ++$x ?></td>
 												<td><?php echo $row->so_number ?></td>
 												<td><?php echo ($row->so_type == 1 ? 'PPN' : 'Non-PPN') ?></td>
-												<td><?php echo $row->sales_name ?></td>
+												<td><?php echo $row->sales_fname . ' ' . $row->sales_lname ?></td>
 												<td><?php echo $row->cust_name ?></td>
 												<td><?php echo to_indDate($row->so_date) ?></td>
 												<td><?php echo to_indDate($row->so_deliv_req) ?></td>
