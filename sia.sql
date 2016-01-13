@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2016 at 03:36 
+-- Generation Time: Jan 13, 2016 at 03:07 
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -42,6 +42,26 @@ INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
 (1, 'PE'),
 (2, 'PP'),
 (3, 'HDPE');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `cust_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cust_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`cust_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `cust_name`) VALUES
+(1, 'Blue Bird'),
+(2, 'Aba Mandiri');
 
 -- --------------------------------------------------------
 
@@ -85,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`prod_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=188 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=189 ;
 
 --
 -- Dumping data for table `products`
@@ -278,7 +298,350 @@ INSERT INTO `products` (`prod_id`, `cat_id`, `st_id`, `pack_id`, `prod_name`, `p
 (184, 3, 3, 3, 'HD Fruit', 30, 0, 0, 0.0015, 1, 1, '2016-01-06 15:15:00', '2016-01-06 08:15:00'),
 (185, 3, 3, 3, 'HD Fruit', 35, 0, 0, 0.0015, 1, 1, '2016-01-06 15:15:00', '2016-01-06 08:15:00'),
 (186, 3, 2, 1, 'New Product', 28, 20, 16, 0.0033, 2, 1, '2016-01-08 08:59:51', '2016-01-08 02:35:08'),
-(187, 2, 3, 1, 'New Product 2', 22, 9, 14, 0.025, 2, 1, '2016-01-08 09:09:41', '2016-01-08 02:09:41');
+(187, 2, 3, 1, 'New Product 2', 22, 9, 14, 0.025, 2, 1, '2016-01-08 09:09:41', '2016-01-08 02:09:41'),
+(188, 1, 1, 2, 'New Product 3', 5, 9, 7, 0.005, 1, 1, '2016-01-08 10:01:33', '2016-01-08 03:01:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `region`
+--
+
+CREATE TABLE IF NOT EXISTS `region` (
+  `reg_id` char(2) NOT NULL,
+  `reg_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`reg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `region`
+--
+
+INSERT INTO `region` (`reg_id`, `reg_name`) VALUES
+('AD', 'Andorra'),
+('AE', 'United Arab Emirates'),
+('AF', 'Afghanistan'),
+('AI', 'Anguilla'),
+('AL', 'Albania'),
+('AM', 'Armenia'),
+('AN', 'Netherlands Antilles'),
+('AO', 'Angola'),
+('AQ', 'Antarctica'),
+('AR', 'Argentina'),
+('AS', 'American Samoa'),
+('AT', 'Austria'),
+('AU', 'Australia'),
+('AW', 'Aruba'),
+('AZ', 'Azerbaijan'),
+('BA', 'Bosnia and Herzegowina'),
+('BB', 'Barbados'),
+('BD', 'Bangladesh'),
+('BE', 'Belgium'),
+('BF', 'Burkina Faso'),
+('BG', 'Bulgaria'),
+('BH', 'Bahrain'),
+('BI', 'Burundi'),
+('BJ', 'Benin'),
+('BM', 'Bermuda'),
+('BN', 'Brunei Darussalam'),
+('BO', 'Bolivia'),
+('BR', 'Brazil'),
+('BS', 'Bahamas'),
+('BT', 'Bhutan'),
+('BV', 'Bouvet Island'),
+('BW', 'Botswana'),
+('BY', 'Belarus'),
+('BZ', 'Belize'),
+('CA', 'Canada'),
+('CC', 'Cocos (Keeling) Islands'),
+('CD', 'Congo, the Democratic Republic of the'),
+('CF', 'Central African Republic'),
+('CG', 'Congo'),
+('CH', 'Switzerland'),
+('CI', 'Cote d`Ivoire'),
+('CK', 'Cook Islands'),
+('CL', 'Chile'),
+('CM', 'Cameroon'),
+('CN', 'China'),
+('CO', 'Colombia'),
+('CR', 'Costa Rica'),
+('CU', 'Cuba'),
+('CV', 'Cape Verde'),
+('CX', 'Christmas Island'),
+('CY', 'Cyprus'),
+('CZ', 'Czech Republic'),
+('DE', 'Germany'),
+('DJ', 'Djibouti'),
+('DK', 'Denmark'),
+('DM', 'Dominica'),
+('DO', 'Dominican Republic'),
+('DZ', 'Algeria'),
+('EC', 'Ecuador'),
+('EE', 'Estonia'),
+('EG', 'Egypt'),
+('EH', 'Western Sahara'),
+('ER', 'Eritrea'),
+('ES', 'Spain'),
+('ET', 'Ethiopia'),
+('FI', 'Finland'),
+('FJ', 'Fiji'),
+('FK', 'Falkland Islands (Malvinas)'),
+('FM', 'Micronesia, Federated States of'),
+('FO', 'Faroe Islands'),
+('FR', 'France'),
+('GA', 'Gabon'),
+('GB', 'United Kingdom'),
+('GD', 'Grenada'),
+('GE', 'Georgia'),
+('GF', 'French Guiana'),
+('GH', 'Ghana'),
+('GI', 'Gibraltar'),
+('GL', 'Greenland'),
+('GM', 'Gambia'),
+('GN', 'Guinea'),
+('GP', 'Guadeloupe'),
+('GQ', 'Equatorial Guinea'),
+('GR', 'Greece'),
+('GS', 'South Georgia and the South Sandwich Islands'),
+('GT', 'Guatemala'),
+('GU', 'Guam'),
+('GW', 'Guinea-Bissau'),
+('GY', 'Guyana'),
+('HK', 'Hong Kong'),
+('HM', 'Heard and Mc Donald Islands'),
+('HN', 'Honduras'),
+('HR', 'Croatia (Hrvatska)'),
+('HT', 'Haiti'),
+('HU', 'Hungary'),
+('ID', 'Indonesia'),
+('IE', 'Ireland'),
+('IL', 'Israel'),
+('IN', 'India'),
+('IO', 'British Indian Ocean Territory'),
+('IQ', 'Iraq'),
+('IR', 'Iran (Islamic Republic of)'),
+('IS', 'Iceland'),
+('IT', 'Italy'),
+('JM', 'Jamaica'),
+('JO', 'Jordan'),
+('JP', 'Japan'),
+('KE', 'Kenya'),
+('KG', 'Kyrgyzstan'),
+('KH', 'Cambodia'),
+('KI', 'Kiribati'),
+('KM', 'Comoros'),
+('KN', 'Saint Kitts and Nevis'),
+('KP', 'Korea, Democratic People`s Republic of'),
+('KR', 'Korea, Republic of'),
+('KW', 'Kuwait'),
+('KY', 'Cayman Islands'),
+('KZ', 'Kazakhstan'),
+('LA', 'Lao People`s Democratic Republic'),
+('LB', 'Lebanon'),
+('LC', 'Saint LUCIA'),
+('LI', 'Liechtenstein'),
+('LK', 'Sri Lanka'),
+('LR', 'Liberia'),
+('LS', 'Lesotho'),
+('LT', 'Lithuania'),
+('LU', 'Luxembourg'),
+('LV', 'Latvia'),
+('LY', 'Libyan Arab Jamahiriya'),
+('MA', 'Morocco'),
+('MC', 'Monaco'),
+('MD', 'Moldova, Republic of'),
+('MG', 'Madagascar'),
+('MH', 'Marshall Islands'),
+('MK', 'Macedonia, The Former Yugoslav Republic of'),
+('ML', 'Mali'),
+('MM', 'Myanmar'),
+('MN', 'Mongolia'),
+('MO', 'Macau'),
+('MP', 'Northern Mariana Islands'),
+('MQ', 'Martinique'),
+('MR', 'Mauritania'),
+('MS', 'Montserrat'),
+('MT', 'Malta'),
+('MU', 'Mauritius'),
+('MV', 'Maldives'),
+('MW', 'Malawi'),
+('MX', 'Mexico'),
+('MY', 'Malaysia'),
+('MZ', 'Mozambique'),
+('NA', 'Namibia'),
+('NC', 'New Caledonia'),
+('NE', 'Niger'),
+('NF', 'Norfolk Island'),
+('NG', 'Nigeria'),
+('NI', 'Nicaragua'),
+('NL', 'Netherlands'),
+('NO', 'Norway'),
+('NP', 'Nepal'),
+('NR', 'Nauru'),
+('NU', 'Niue'),
+('NZ', 'New Zealand'),
+('OM', 'Oman'),
+('PA', 'Panama'),
+('PE', 'Peru'),
+('PF', 'French Polynesia'),
+('PG', 'Papua New Guinea'),
+('PH', 'Philippines'),
+('PK', 'Pakistan'),
+('PL', 'Poland'),
+('PM', 'St. Pierre and Miquelon'),
+('PN', 'Pitcairn'),
+('PR', 'Puerto Rico'),
+('PT', 'Portugal'),
+('PW', 'Palau'),
+('PY', 'Paraguay'),
+('QA', 'Qatar'),
+('RE', 'Reunion'),
+('RO', 'Romania'),
+('RU', 'Russian Federation'),
+('RW', 'Rwanda'),
+('SA', 'Saudi Arabia'),
+('SB', 'Solomon Islands'),
+('SC', 'Seychelles'),
+('SD', 'Sudan'),
+('SE', 'Sweden'),
+('SG', 'Singapore'),
+('SH', 'St. Helena'),
+('SI', 'Slovenia'),
+('SJ', 'Svalbard and Jan Mayen Islands'),
+('SK', 'Slovakia (Slovak Republic)'),
+('SL', 'Sierra Leone'),
+('SM', 'San Marino'),
+('SN', 'Senegal'),
+('SO', 'Somalia'),
+('SR', 'Suriname'),
+('ST', 'Sao Tome and Principe'),
+('SV', 'El Salvador'),
+('SY', 'Syrian Arab Republic'),
+('SZ', 'Swaziland'),
+('TC', 'Turks and Caicos Islands'),
+('TD', 'Chad'),
+('TF', 'French Southern Territories'),
+('TG', 'Togo'),
+('TH', 'Thailand'),
+('TJ', 'Tajikistan'),
+('TK', 'Tokelau'),
+('TM', 'Turkmenistan'),
+('TN', 'Tunisia'),
+('TO', 'Tonga'),
+('TR', 'Turkey'),
+('TT', 'Trinidad and Tobago'),
+('TV', 'Tuvalu'),
+('TW', 'Taiwan, Province of China'),
+('TZ', 'Tanzania, United Republic of'),
+('UA', 'Ukraine'),
+('UG', 'Uganda'),
+('UM', 'United States Minor Outlying Islands'),
+('US', 'United States'),
+('UY', 'Uruguay'),
+('UZ', 'Uzbekistan'),
+('VA', 'Holy See (Vatican City State)'),
+('VC', 'Saint Vincent and the Grenadines'),
+('VE', 'Venezuela'),
+('VG', 'Virgin Islands (British)'),
+('VI', 'Virgin Islands (U.S.)'),
+('VN', 'Viet Nam'),
+('VU', 'Vanuatu'),
+('WF', 'Wallis and Futuna Islands'),
+('WS', 'Samoa'),
+('YE', 'Yemen'),
+('YT', 'Mayotte'),
+('ZA', 'South Africa'),
+('ZM', 'Zambia'),
+('ZW', 'Zimbabwe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE IF NOT EXISTS `sales` (
+  `sales_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sales_username` varchar(50) NOT NULL,
+  `sales_pwd` varbinary(200) NOT NULL,
+  `sales_email` varchar(50) NOT NULL,
+  `sales_img` varchar(100) NOT NULL,
+  `sales_fname` varchar(50) NOT NULL,
+  `sales_lname` varchar(50) NOT NULL,
+  `sales_phone` varchar(20) NOT NULL,
+  `sales_gender` char(1) DEFAULT 'M',
+  `sales_address` text,
+  `sales_city` varchar(50) DEFAULT NULL,
+  `sales_reg` char(2) DEFAULT NULL,
+  `sales_about` text,
+  `visibility` tinyint(1) NOT NULL COMMENT '1:Active|2:Deleted',
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`sales_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`sales_id`, `sales_username`, `sales_pwd`, `sales_email`, `sales_img`, `sales_fname`, `sales_lname`, `sales_phone`, `sales_gender`, `sales_address`, `sales_city`, `sales_reg`, `sales_about`, `visibility`, `created_at`, `updated_at`) VALUES
+(1, 'aldiunanto', '3264353865386463373362303266343364376637636539303539356534383866', 'aldiunanto@yahoo.com', '', 'Aldi', 'Unanto', '087770958005', 'M', 'Depok', 'Depok', 'ID', 'Langganan', 1, '2016-01-12 17:06:34', '2016-01-12 11:00:17'),
+(2, 'tossaro', '2d58e8dc73b02f43d7f7ce90595e488f', 'hamzah@tossaro.com', '', 'Hamzah', 'Tossaro', '080911112222', 'M', 'Depok', 'Depok', 'ID', 'Langganan', 2, '2016-01-12 17:06:34', '2016-01-12 11:00:17'),
+(4, 'hanif', '72e74f574535bdc82cf4b99f8fc064e1', 'muhammad@hanif.com', '', 'Muhammad', 'Hanif', '932048298397', 'M', 'Alamat Palsu', 'Alien', 'UZ', 'Yoo hooo', 2, '2016-01-12 17:10:17', '2016-01-12 15:23:00'),
+(5, 'tossaro', 'd41d8cd98f00b204e9800998ecf8427e', 'hamzah@tossaro.com', '', 'Hamzah', 'Tossaro', '3208398319', 'M', 'Depok', 'Depok', 'ID', 'Depok', 1, '2016-01-12 18:01:06', '2016-01-12 14:25:10'),
+(6, 'mahendra', '9cce854acb59b5845c23bbbe68d823a4', 'mahendra@xacti.com', '', 'Mahendra', 'Xacti', '243435', 'F', 'Depok', 'Depok', 'ID', 'Depok', 1, '2016-01-12 22:21:38', '2016-01-12 16:09:12'),
+(7, '', 'd41d8cd98f00b204e9800998ecf8427e', '', '', '', '', '', '0', '', '', '0', '', 1, '2016-01-13 09:05:27', '2016-01-13 02:05:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salesorder`
+--
+
+CREATE TABLE IF NOT EXISTS `salesorder` (
+  `so_id` int(11) NOT NULL AUTO_INCREMENT,
+  `so_type` tinyint(1) NOT NULL COMMENT '1:ppn|2:non',
+  `so_number` varchar(20) NOT NULL,
+  `sales_id` int(11) NOT NULL,
+  `cust_id` int(11) NOT NULL,
+  `so_date` date NOT NULL,
+  `so_po_number` varchar(50) NOT NULL,
+  `so_deliv_req` date NOT NULL,
+  `so_pay_terms` int(11) NOT NULL,
+  `visibility` tinyint(1) NOT NULL COMMENT '1:active|2:deleted',
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`so_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `salesorder`
+--
+
+INSERT INTO `salesorder` (`so_id`, `so_type`, `so_number`, `sales_id`, `cust_id`, `so_date`, `so_po_number`, `so_deliv_req`, `so_pay_terms`, `visibility`, `created_at`, `updated_at`) VALUES
+(1, 1, 'P.0001/I-2016', 1, 1, '2016-01-12', 'P/123/JIU/16', '2016-01-18', 4, 1, '2016-01-12 09:35:00', '2016-01-12 02:35:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salesorder_sub`
+--
+
+CREATE TABLE IF NOT EXISTS `salesorder_sub` (
+  `sos_id` int(11) NOT NULL AUTO_INCREMENT,
+  `so_id` int(11) NOT NULL,
+  `prod_id` int(11) NOT NULL,
+  `sos_qty` double NOT NULL,
+  PRIMARY KEY (`sos_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `salesorder_sub`
+--
+
+INSERT INTO `salesorder_sub` (`sos_id`, `so_id`, `prod_id`, `sos_qty`) VALUES
+(1, 1, 1, 210),
+(2, 1, 3, 152);
 
 -- --------------------------------------------------------
 
@@ -300,6 +663,33 @@ INSERT INTO `seal_type` (`st_id`, `st_name`) VALUES
 (1, 'Single'),
 (2, 'Double'),
 (3, 'None');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_status` smallint(1) NOT NULL,
+  `user_uniq_name` varchar(128) NOT NULL,
+  `user_email` varchar(128) NOT NULL,
+  `user_fullname` varchar(128) NOT NULL,
+  `user_password` varchar(64) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_status`, `user_uniq_name`, `user_email`, `user_fullname`, `user_password`, `created_at`, `updated_at`) VALUES
+(1, 2, 'tossaro', 'hamzah.tossaro@gmail.com', 'Hamzah Tossaro', '21232f297a57a5a743894a0e4a801fc3', '2016-01-12 13:07:38', '2016-01-12 07:00:35'),
+(2, 2, 'aldiunanto', 'aldiunanto@gmail.com', 'Aldi Unanto', '3eb82b3e86ccf2b013f2b2e8b717ffdd', '2016-01-12 13:07:38', '2016-01-12 07:00:35'),
+(3, 0, '', 'bejo@yahoo.com', 'Bejo aja', '', '2016-01-12 15:18:37', '2016-01-12 08:18:37');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
