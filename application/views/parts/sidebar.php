@@ -76,6 +76,27 @@
 						</li>
 					</ul>
 				</li>
+				<li <?php isActive('sales') ?>>
+					<a href="javascript:;">
+						<i class="fa fa-group"></i>
+						<span class="title">Sales</span>
+						<span class="arrow"></span>
+						<span class="selected">
+						</span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo site_url('sales') ?>">
+								<i class="fa fa-bars"></i> Data List
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('sales/add') ?>">
+								<i class="fa fa-plus-square"></i> New Sales
+							</a>
+						</li>
+					</ul>
+				</li>
 				<li <?php isActive('salesorder') ?>>
 					<a href="<?php echo site_url('salesorder') ?>">
 						<i class="fa fa-shopping-cart"></i>
