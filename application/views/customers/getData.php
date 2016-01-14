@@ -34,7 +34,7 @@
 							<tr class="cust-item" data-cust-name="<?php echo strtoupper($row->cust_name) ?>">
 								<td><?php echo $row->cust_name ?></td>
 								<td>
-									<button class="take-me-out btn blue" role="button" data-id="<?php echo $row->cust_id ?>">
+									<button class="take-me-out btn blue btn-sm" role="button" data-id="<?php echo $row->cust_id ?>">
 										<i class="fa fa-check-square-o"></i>
 									</button>
 								</td>
