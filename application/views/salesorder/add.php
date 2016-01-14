@@ -1,6 +1,22 @@
 <div class="page-content-wrapper">
 	<div class="page-content">
-
+		<div class="modal fade" id="basic" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						 Widget settings form goes here
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn blue true">Save changes</button>
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php $this->load->view('parts/style_customizer') ?>
 
 		<div class="row">
@@ -105,6 +121,9 @@
 												<option value="<?php echo $row->sales_id ?>"><?php echo $row->sales_fname . ' ' . $row->sales_lname ?></option>
 												<?php endforeach; ?>
 											</select>
+											<span class="help-block">
+												 This field is required
+											</span>
 										</div>
 										<div class="clearfix"></div>
 									</div>
@@ -122,7 +141,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<label for="" class="control-label col-md-4">Customer</label>
+										<label for="" class="control-label col-md-4">Customer*</label>
 										<div class="col-md-8">
 											<div class="input-group">
 												<input type="hidden" name="cust_id" />
@@ -133,6 +152,9 @@
 													</button>
 												</span>
 											</div>
+											<span class="help-block">
+												 This field is required
+											</span>
 										</div>
 										<div class="clearfix"></div>
 									</div>
