@@ -35,3 +35,8 @@ form .form-group .radio-inline{
 	padding-top: 5px;
 }
 .portlet .numeric-error-msg{ display: none; }
+
+#cust-getData{
+	max-height: 400px;
+	overflow: auto;
+}
