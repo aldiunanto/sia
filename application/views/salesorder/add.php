@@ -132,7 +132,7 @@
 								<div class="form-group">
 									<label class="control-label col-md-4">Delivery Request</label>
 									<div class="col-md-8">
-										<input type="text" class="form-control" name="so_deliv_req" />
+										<input type="text" class="form-control date date-picker" name="so_deliv_req" data-date-format="dd-mm-yyyy" />
 									</div>
 									<div class="clearfix"></div>
 								</div>
