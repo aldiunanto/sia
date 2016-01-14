@@ -63,6 +63,8 @@ salesorder = {
 							$('#basic button.true').hide();
 						}
 					});
+
+					self._customerFilter();
 				}
 			})
 		},
@@ -70,6 +72,23 @@ salesorder = {
 			$('select[name="sales_id"]').on('change', function(){
 				$(this).removeAttr('style');
 			})
+		},
+		_customerFilter: function(){
+			var doFilter = function(){
+				var val = $('input[name="filter"]').val();
+		    	    	
+		        if(val == ''){ $('tr.cust-item').show(); }
+		        else{
+		        	$('tr.cust-item[data-cust-name*="' + val.toUpperCase() + '"]').show();
+		            $('tr.cust-item:not([data-cust-name*="' + val.toUpperCase() + '"])').hide();
+		        }
+			};
+
+	    	var timer = null;
+	        $('input[name="filter"]').keydown(function(){
+	        	clearTimeout(timer);
+	            timer = setTimeout(doFilter, 700);
+	        });
 		}
 	}
 
