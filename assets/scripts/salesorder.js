@@ -65,6 +65,7 @@ salesorder = {
 					});
 
 					self._customerFilter();
+					self._takeMeOut();
 				}
 			})
 		},
@@ -89,6 +90,20 @@ salesorder = {
 	        	clearTimeout(timer);
 	            timer = setTimeout(doFilter, 700);
 	        });
+		},
+		_takeMeOut: function(){
+			$('button.take-me-out').on('click', function(){
+				var el = this;
+				var cust = {
+					custId		: $(el).attr('data-id'),
+					custName 	: $(el).parent().prev().html()
+				};
+
+				$('input[name="cust_name"]').val(cust.custName);
+				$('input[name="cust_id"]').val(cust.custId);
+
+				$('#basic').modal('hide');
+			})
 		}
 	}
 
