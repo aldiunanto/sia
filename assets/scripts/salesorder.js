@@ -31,6 +31,12 @@ salesorder = {
 				});
 			});
 		}
+	},
+
+	add: {
+		init: function(){
+			
+		}
 	}
 
 }
