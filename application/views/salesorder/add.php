@@ -57,7 +57,12 @@
 									<div class="form-group">
 										<label class="control-label col-md-4">Date*</label>
 										<div class="col-md-8">
-											<input type="text" class="form-control" required="required" name="so_date" value="<?php echo to_indDate(now()) ?>" />
+											<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+												<input type="text" class="form-control" readonly required="required" name="so_date" value="<?php echo to_indDate(now()) ?>" />
+												<span class="input-group-btn">
+													<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+											</div>
 											<span class="help-block">
 												 This field is required
 											</span>
@@ -123,7 +128,7 @@
 												<input type="hidden" name="cust_id" />
 												<input type="text" class="form-control" name="cust_name" />
 												<span class="input-group-btn">
-													<button class="btn blue" type="button">
+													<button class="btn green open-cust" type="button">
 														<i class="fa fa-list"></i>
 													</button>
 												</span>
@@ -148,7 +153,7 @@
 							</fieldset>
 							<div class="form-actions right">
 								<a href="<?php echo site_url('salesorder') ?>" class="btn default">Cancel</a>
-								<button type="submit" class="btn green"><i class="fa fa-save"></i> Save</button>
+								<button type="submit" class="btn blue"><i class="fa fa-save"></i> Save</button>
 							</div>
 						</form>
 					</div>

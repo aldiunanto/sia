@@ -39,7 +39,9 @@
 			$data = array(
 				'title'		=> 'Add New SO',
 				'content'	=> 'salesorder/add',
-				'sales'		=> $this->sales->fetch()
+				'sales'		=> $this->sales->fetch(),
+				'css'		=> array('bootstrap-datepicker'),
+				'js'		=> array('bootstrap-datepicker')
 			);
 
 			$this->load->view('base', $data);

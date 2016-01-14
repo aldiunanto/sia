@@ -35,6 +35,14 @@ salesorder = {
 
 	add: {
 		init: function(){
+			this._datePickerInit();
+		},
+		_datePickerInit: function(){
+			$('.date-picker').datepicker({
+	            autoclose: true
+	        });
+		},
+		_openCustomers: function(){
 			
 		}
 	}
