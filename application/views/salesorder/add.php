@@ -17,6 +17,12 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal fade bs-modal-lg" id="ajax" role="basic" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				</div>
+			</div>
+		</div>
 		<?php $this->load->view('parts/style_customizer') ?>
 
 		<div class="row">
@@ -212,9 +218,9 @@
 												<input type="hidden" name="prod_id[]" />
 												<input type="text" class="form-control input-sm" name="prod_name[]" />
 												<span class="input-group-btn">
-													<button class="btn default open-prod btn-sm" type="button">
+													<a href="<?php echo site_url('products/getData') ?>" class="btn default open-prod btn-sm" data-target="#ajax" data-toggle="modal">
 														<i class="fa fa-list"></i>
-													</button>
+													</a>
 												</span>
 											</div>
 										</td>
