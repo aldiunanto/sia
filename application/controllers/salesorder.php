@@ -40,8 +40,8 @@
 				'title'		=> 'Add New SO',
 				'content'	=> 'salesorder/add',
 				'sales'		=> $this->sales->fetch(),
-				'css'		=> array('bootstrap-datepicker'),
-				'js'		=> array('bootstrap-datepicker')
+				'css'		=> array('bootstrap-datepicker', 'jquery.dataTables'),
+				'js'		=> array('bootstrap-datepicker', 'core/jquery.dataTables.min')
 			);
 
 			$this->load->view('base', $data);
