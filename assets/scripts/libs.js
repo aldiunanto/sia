@@ -16,6 +16,16 @@ LIBS = {
 		});
 
 		$el.modal('show');
+	},
+	callAjax: function(toUrl, toData){
+		var finalUrl = (!/^(f|ht)tps?:\/\//i.test(toUrl) ? (options.baseUrl + toUrl) : toUrl);
+		return $.ajax({
+			type	: 'post',
+			url		: finalUrl,
+			async	: false,
+			data	: toData,
+			cache	: false
+		}).responseText;
 	}
 
 }
