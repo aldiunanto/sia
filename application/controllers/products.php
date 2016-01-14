@@ -92,7 +92,7 @@ class Products extends CI_Controller {
 		redirect('products/edit/' . $prod_id);
 	}
 	public function getData(){
-		$this->load->view('products/getData');
+		$this->load->view('products/getData', array('fetch' => $this->product->fetch()));
 	}
 
 }
