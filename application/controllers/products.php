@@ -91,5 +91,8 @@ class Products extends CI_Controller {
 		$this->session->set_flashdata('message', '<div class="alert alert-info"><strong>Success!</strong> The product has been updated.</div>');
 		redirect('products/edit/' . $prod_id);
 	}
+	public function getData(){
+		$this->load->view('products/getData');
+	}
 
 }

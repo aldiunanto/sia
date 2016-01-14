@@ -37,6 +37,7 @@ salesorder = {
 		init: function(){
 			this._datePickerInit();
 			this._openCustomers();
+			this._salesRemoveStyle();
 		},
 		_datePickerInit: function(){
 			$('.date-picker').datepicker({
@@ -51,7 +52,6 @@ salesorder = {
 
 				if($salesId.val() == ''){
 					$salesId.css('border', '1px solid #ff0000');
-					self._salesRemoveStyle();
 				}else{
 					$salesId.removeAttr('style');
 
@@ -72,6 +72,7 @@ salesorder = {
 		_salesRemoveStyle: function(){
 			$('select[name="sales_id"]').on('change', function(){
 				$(this).removeAttr('style');
+				$('input[name="cust_name"], input[name="cust_id"]').val('');
 			})
 		},
 		_customerFilter: function(){
