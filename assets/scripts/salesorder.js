@@ -68,7 +68,7 @@ salesorder = {
 					});
 
 					self._customerFilter();
-					self._takeMeOut();
+					self._custTakeMeOut();
 				}
 			})
 		},
@@ -95,7 +95,7 @@ salesorder = {
 	            timer = setTimeout(doFilter, 700);
 	        });
 		},
-		_takeMeOut: function(){
+		_custTakeMeOut: function(){
 			$('button.take-me-out').on('click', function(){
 				var el = this;
 				var cust = {
@@ -110,6 +110,8 @@ salesorder = {
 			})
 		},
 		_prodDataTables: function(){
+			var self = this;
+
 			$('#ajax.modal').on('shown.bs.modal', function(){
 				$('#products-list').DataTable({
 					'pageLength'	: 20,
@@ -118,6 +120,8 @@ salesorder = {
 						{ 'bSortable' : false, 'aTargets' : [0, 10] }
 					]
 				});
+				
+				self._prodTakeMeOut();
 			})
 		},
 		_removeProd: function(){
@@ -133,6 +137,11 @@ salesorder = {
 				$('#so-sub').append(newTr);
 
 				$('html, body').animate({ scrollTop: $(document).height() }, 500);
+			})
+		},
+		_prodTakeMeOut: function(){
+			$('.prod-take-me-out').on('click', function(){
+				alert($(this).attr('data-id'));
 			})
 		}
 	}
