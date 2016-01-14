@@ -39,6 +39,7 @@ salesorder = {
 			this._openCustomers();
 			this._salesRemoveStyle();
 			this._prodDataTables();
+			this._removeProd();
 		},
 		_datePickerInit: function(){
 			$('.date-picker').datepicker({
@@ -118,6 +119,11 @@ salesorder = {
 				});
 			})
 		},
+		_removeProd: function(){
+			$('.remove-prod').on('click', function(){
+				$(this).closest('tr').remove();
+			})
+		}
 	}
 
 }
