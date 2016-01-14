@@ -192,7 +192,7 @@
 					</div>
 					<div class="portlet-body">
 						<div class="table-container">
-							<table class="table table-striped table-bordered table-hover">
+							<table class="table table-striped table-bordered table-hover" id="so-sub">
 								<thead>
 									<tr role="row" class="heading">
 										<th rowspan="2">Product Name</th>
@@ -236,7 +236,7 @@
 											<input type="text" class="form-control input-sm" name="sos_qty[]" />
 										</td>
 										<td>
-											<button class="btn btn-danger btn-sm" role="button">
+											<button class="btn btn-danger btn-sm remove-prod" role="button">
 												<i class="fa fa-times"></i>
 											</button>
 										</td>

@@ -40,6 +40,7 @@ salesorder = {
 			this._salesRemoveStyle();
 			this._prodDataTables();
 			this._removeProd();
+			this._addItem();
 		},
 		_datePickerInit: function(){
 			$('.date-picker').datepicker({
@@ -122,6 +123,16 @@ salesorder = {
 		_removeProd: function(){
 			$('.remove-prod').on('click', function(){
 				$(this).closest('tr').remove();
+			})
+		},
+		_addItem: function(){
+			$('.add-item').on('click', function(e){
+				e.preventDefault();
+
+				var newTr = LIBS.callAjax('/salesorder/newtr');
+				$('#so-sub').append(newTr);
+
+				$('html, body').animate({ scrollTop: $(document).height() }, 500);
 			})
 		}
 	}

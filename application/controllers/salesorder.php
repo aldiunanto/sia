@@ -46,5 +46,8 @@
 
 			$this->load->view('base', $data);
 		}
+		public function newtr(){
+			$this->load->view('salesorder/newtr');
+		}
 
 	}
