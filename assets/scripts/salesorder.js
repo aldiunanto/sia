@@ -38,6 +38,7 @@ salesorder = {
 			this._datePickerInit();
 			this._openCustomers();
 			this._salesRemoveStyle();
+			this._prodDataTables();
 		},
 		_datePickerInit: function(){
 			$('.date-picker').datepicker({
@@ -105,7 +106,18 @@ salesorder = {
 
 				$('#basic').modal('hide');
 			})
-		}
+		},
+		_prodDataTables: function(){
+			$('#ajax.modal').on('shown.bs.modal', function(){
+				$('#products-list').DataTable({
+					'pageLength'	: 20,
+					'sPageButton'	: 'btn btn-default',
+					'aoColumnDefs'	: [
+						{ 'bSortable' : false, 'aTargets' : [0, 10] }
+					]
+				});
+			})
+		},
 	}
 
 }
