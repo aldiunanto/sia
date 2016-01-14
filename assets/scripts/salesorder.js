@@ -57,7 +57,7 @@ salesorder = {
 
 					LIBS.callModal('#basic', {
 						'title'			: 'Choose a Customer',
-						'body'			: LIBS.callAjax('customer/getData', 'sales_id=' + $salesId.val()),
+						'body'			: LIBS.callAjax('/customers/getData', 'sales_id=' + $salesId.val()),
 						'doAction'		: function(){ },
 						'doSomething'	: function(){
 							$('#basic button.true').hide();

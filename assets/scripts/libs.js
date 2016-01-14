@@ -18,7 +18,7 @@ LIBS = {
 		$el.modal('show');
 	},
 	callAjax: function(toUrl, toData){
-		var finalUrl = (!/^(f|ht)tps?:\/\//i.test(toUrl) ? (options.baseUrl + toUrl) : toUrl);
+		var finalUrl = (!/^(f|ht)tps?:\/\//i.test(toUrl) ? (options.siteUrl + toUrl) : toUrl);
 		return $.ajax({
 			type	: 'post',
 			url		: finalUrl,
