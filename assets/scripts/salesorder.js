@@ -36,6 +36,7 @@ salesorder = {
 	add: {
 		init: function(){
 			this._datePickerInit();
+			this._openCustomers();
 		},
 		_datePickerInit: function(){
 			$('.date-picker').datepicker({
@@ -43,7 +44,23 @@ salesorder = {
 	        });
 		},
 		_openCustomers: function(){
-			
+			var self = this;
+
+			$('.open-cust').on('click', function(){
+				if($('select[name="sales_id"]').val() == ''){
+					$('select[name="sales_id"]').css('border', '1px solid #ff0000');
+					self._salesRemoveStyle();
+				}else{
+					$('select[name="sales_id"]').removeAttr('style');
+					
+					
+				}
+			})
+		},
+		_salesRemoveStyle: function(){
+			$('select[name="sales_id"]').on('change', function(){
+				$(this).removeAttr('style');
+			})
 		}
 	}
 
