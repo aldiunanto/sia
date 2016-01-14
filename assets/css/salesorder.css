@@ -12,7 +12,7 @@ table thead th{ vertical-align: middle !important; }
 	color: #fff;
 	border: 1px solid #47A447;
 }
-select[name="so-list_length"], #so-list_filter input{
+select[name="so-list_length"], #so-list_filter input, select[name="products-list_length"], #products-list_filter input{
 	color: #333;
 	padding: 4px;
 	background-color: #fff;
@@ -21,13 +21,13 @@ select[name="so-list_length"], #so-list_filter input{
 	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-select[name="so-list_length"]:focus, #so-list_filter input:focus{
+select[name="so-list_length"]:focus, #so-list_filter input:focus, select[name="products-list_length"]:focus, #products-list_filter input:focus{
   border-color: #999999;
   outline: 0;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
-#so-list_filter input{ padding: 0 8px; }
+#so-list_filter input, #products-list_filter input{ padding: 0 8px; }
 
 form .control-label{ text-align: right; margin-top: 5px; }
 form .form-group{ margin-bottom: 20px; }
@@ -36,7 +36,7 @@ form .form-group .radio-inline{
 }
 .portlet .numeric-error-msg{ display: none; }
 
-#cust-getData{
+#cust-getData, #prod-getData{
 	max-height: 400px;
 	overflow: auto;
 }
