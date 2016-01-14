@@ -9,7 +9,7 @@
 			return $this->db->select($this->primary . ', cust_name')
 							->where('sales_id', $sales_id)
 							->order_by('cust_name', 'ASC')
-							->get($this->tbl)
+							->get($this->tbl);
 		}
 
 	}
