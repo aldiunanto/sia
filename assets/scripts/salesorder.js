@@ -47,13 +47,22 @@ salesorder = {
 			var self = this;
 
 			$('.open-cust').on('click', function(){
-				if($('select[name="sales_id"]').val() == ''){
-					$('select[name="sales_id"]').css('border', '1px solid #ff0000');
+				$salesId = $('select[name="sales_id"]');
+
+				if($salesId.val() == ''){
+					$salesId.css('border', '1px solid #ff0000');
 					self._salesRemoveStyle();
 				}else{
-					$('select[name="sales_id"]').removeAttr('style');
-					
-					
+					$salesId.removeAttr('style');
+
+					LIBS.callModal('#basic', {
+						'title'			: 'Choose a Customer',
+						'body'			: LIBS.callAjax('customer/getData', 'sales_id=' + $salesId.val()),
+						'doAction'		: function(){ },
+						'doSomething'	: function(){
+							$('#basic button.true').hide();
+						}
+					});
 				}
 			})
 		},
