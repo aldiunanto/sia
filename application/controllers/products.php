@@ -94,5 +94,9 @@ class Products extends CI_Controller {
 	public function getData(){
 		$this->load->view('products/getData', array('fetch' => $this->product->fetch()));
 	}
+	public function getInfo(){
+		$row = $this->product->fetch(array($this->product->primary => $_POST['prod_id']))->row();
+		echo json_encode($row);
+	}
 
 }

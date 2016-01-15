@@ -120,7 +120,7 @@ salesorder = {
 			var self = this;
 
 			$('#ajax.modal').on('shown.bs.modal', function(e){
-				$('#products-list').DataTable({
+				table = $('#products-list').DataTable({
 					'pageLength'	: 20,
 					'sPageButton'	: 'btn btn-default',
 					'aoColumnDefs'	: [
@@ -128,7 +128,7 @@ salesorder = {
 					]
 				});
 
-				self._prodTakeMeOut($(e.relatedTarget));
+				self._prodTakeMeOut($(e.relatedTarget), table);
 			})
 		},
 		_removeProd: function(){
@@ -146,9 +146,24 @@ salesorder = {
 				$('html, body').animate({ scrollTop: $(document).height() }, 500);
 			})
 		},
-		_prodTakeMeOut: function(opener){
-			$('.prod-take-me-out').on('click', function(){
-				
+		_prodTakeMeOut: function(opener, table){
+			$('#products-list').on('click', '.prod-take-me-out', function(){
+				var data = LIBS.callAjax('/products/getInfo', 'prod_id=' + $(this).attr('data-id'));
+				var row = JSON.parse(data);
+
+				opener.parent().prev().val(row.prod_name)
+					  .prev().val(row.prod_id)
+					  .closest('td').next().html(row.cat_name)
+					  .next().html(row.st_name)
+					  .next().html(row.pack_name)
+					  .next().html(row.prod_width)
+					  .next().html(row.prod_guzzet)
+					  .next().html(row.prod_length)
+					  .next().html(row.prod_thickness)
+					  .next().html((row.prod_emboss == 1 ? 'YES' : 'NO'));
+
+				table.destroy();
+				$('#ajax.modal').modal('hide');
 			})
 		}
 	}
