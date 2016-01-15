@@ -20,7 +20,8 @@
 							->update($this->tbl, array('visibility' => 2));
 		}
 		public function create($vals){
-			return $this->db->insert($this->tbl, $vals);
+			$this->db->insert($this->tbl, $vals);
+			return $this->db->insert_id();
 		}
 		public function save($so_id, $args){
 			return $this->db->where($this->primary, $so_id)->update($this->tbl, $args);

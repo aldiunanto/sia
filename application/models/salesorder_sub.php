@@ -16,5 +16,8 @@
 
 			return $this->db->order_by('A.' . $this->primary, 'ASC')->get($this->tbl . ' AS A');	
 		}
+		public function create($vals){
+			return $this->db->insert($this->tbl, $vals);
+		}
 
 	}

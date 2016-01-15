@@ -83,7 +83,40 @@
 			$this->load->view('salesorder/newtr');
 		}
 		public function store(){
-			print_r($_POST);
+			$mysqlDate = function($date){
+				$d = explode('-', $date);
+				return $d[2] . '-' . $d[1] . '-' . $d[0];
+			};
+
+			$vals = array(
+				'so_type'		=> $this->input->post('so_type'),
+				'so_number'		=> trim($this->input->post('so_number')),
+				'sales_id'		=> $this->input->post('sales_id'),
+				'cust_id'		=> $this->input->post('cust_id'),
+				'so_date'		=> $mysqlDate($this->input->post('so_date')),
+				'so_po_number'	=> trim($this->input->post('so_po_number')),
+				'so_deliv_req'	=> $mysqlDate($this->input->post('so_deliv_req')),
+				'so_pay_terms'	=> trim($this->input->post('so_pay_terms')),
+				'visibility'	=> 1,
+				'created_at'	=> now(true)
+			);
+
+			$so_id = $this->so->create($vals);
+
+			for($x = 0; $x < count($_POST['prod_id']); $x++){
+				if(! empty($_POST['prod_id'][$x]) && ! empty($_POST['sos_qty'][$x])){
+					$data = array(
+						'so_id'		=> $so_id,
+						'prod_id'	=> $_POST['prod_id'][$x],
+						'sos_qty'	=> trim($_POST['sos_qty'][$x])
+					);
+
+					$this->sos->create($data);
+				}
+			}
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success">A new Sales Order successfully created.</div>');
+			redirect('salesorder');
 		}
 
 	}
