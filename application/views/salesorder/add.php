@@ -138,7 +138,12 @@
 								<div class="form-group">
 									<label class="control-label col-md-4">Delivery Request</label>
 									<div class="col-md-8">
-										<input type="text" class="form-control date date-picker" name="so_deliv_req" data-date-format="dd-mm-yyyy" />
+										<div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
+											<input type="text" class="form-control" readonly required="required" name="so_deliv_req" />
+											<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+											</span>
+										</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>

@@ -119,7 +119,7 @@ salesorder = {
 		_prodDataTables: function(){
 			var self = this;
 
-			$('#ajax.modal').on('shown.bs.modal', function(){
+			$('#ajax.modal').on('shown.bs.modal', function(e){
 				$('#products-list').DataTable({
 					'pageLength'	: 20,
 					'sPageButton'	: 'btn btn-default',
@@ -127,8 +127,8 @@ salesorder = {
 						{ 'bSortable' : false, 'aTargets' : [0, 10] }
 					]
 				});
-				
-				self._prodTakeMeOut();
+
+				self._prodTakeMeOut($(e.relatedTarget));
 			})
 		},
 		_removeProd: function(){
@@ -146,9 +146,9 @@ salesorder = {
 				$('html, body').animate({ scrollTop: $(document).height() }, 500);
 			})
 		},
-		_prodTakeMeOut: function(){
+		_prodTakeMeOut: function(opener){
 			$('.prod-take-me-out').on('click', function(){
-				alert($(this).attr('data-id'));
+				
 			})
 		}
 	}
