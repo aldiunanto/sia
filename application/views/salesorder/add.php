@@ -17,6 +17,22 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal fade bs-modal-lg" id="large" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						 Widget settings form goes here
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal fade bs-modal-lg" id="ajax" role="basic" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
@@ -223,9 +239,9 @@
 												<input type="hidden" name="prod_id[]" />
 												<input type="text" class="form-control input-sm" name="prod_name[]" />
 												<span class="input-group-btn">
-													<a href="<?php echo site_url('products/getData') ?>" class="btn default open-prod btn-sm" data-target="#ajax" data-toggle="modal">
+													<button class="btn default open-prod btn-sm">
 														<i class="fa fa-list"></i>
-													</a>
+													</button>
 												</span>
 											</div>
 										</td>

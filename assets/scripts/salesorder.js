@@ -39,7 +39,7 @@ salesorder = {
 			this._generateSONumb();
 			this._openCustomers();
 			this._salesRemoveStyle();
-			this._prodDataTables();
+			this._openProducts();
 			this._removeProd();
 			this._addItem();
 		},
@@ -116,10 +116,29 @@ salesorder = {
 				$('#basic').modal('hide');
 			})
 		},
-		_prodDataTables: function(){
+		_openProducts: function(){
 			var self = this;
 
-			$('#ajax.modal').on('shown.bs.modal', function(e){
+			$('#so-sub').on('click', '.open-prod', function(e){
+				e.preventDefault();
+				var el = $(this);
+
+				LIBS.callModal('#large.modal', {
+					'title'			: 'Choose a Product',
+					'body'			: LIBS.callAjax('/products/getData'),
+					'doAction'		: function(){},
+					'doSomething'	: function(){
+						self._prodTakeMeOut(el);
+					}
+				});
+
+				//self._prodDataTables(el);
+			});
+		},
+		/*_prodDataTables: function(opener){
+			var self = this;
+
+			$('#large.modal').on('shown.bs.modal', function(){
 				table = $('#products-list').DataTable({
 					'pageLength'	: 20,
 					'sPageButton'	: 'btn btn-default',
@@ -128,9 +147,9 @@ salesorder = {
 					]
 				});
 
-				self._prodTakeMeOut($(e.relatedTarget), table);
+				self._prodTakeMeOut(opener, table);
 			})
-		},
+		},*/
 		_removeProd: function(){
 			$('.remove-prod').on('click', function(){
 				$(this).closest('tr').remove();
@@ -149,7 +168,7 @@ salesorder = {
 				self._removeProd();
 			})
 		},
-		_prodTakeMeOut: function(opener, table){
+		_prodTakeMeOut: function(opener){
 			$('#products-list').on('click', '.prod-take-me-out', function(){
 				var data = LIBS.callAjax('/products/getInfo', 'prod_id=' + $(this).attr('data-id'));
 				var row = JSON.parse(data);
@@ -165,8 +184,8 @@ salesorder = {
 					  .next().html(row.prod_thickness)
 					  .next().html((row.prod_emboss == 1 ? 'YES' : 'NO'));
 
-				table.destroy();
-				$('#ajax.modal').modal('hide');
+				$('#large.modal').modal('hide');
+				//table.destroy();
 			})
 		}
 	}

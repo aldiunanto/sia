@@ -82,5 +82,8 @@
 		public function newtr(){
 			$this->load->view('salesorder/newtr');
 		}
+		public function store(){
+			print_r($_POST);
+		}
 
 	}
