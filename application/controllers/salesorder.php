@@ -46,6 +46,39 @@
 
 			$this->load->view('base', $data);
 		}
+		public function generateSONumb(){
+			$get = $this->so->getLastNumb($_POST['so_type']);
+			$lr = array(
+				'01'=>'I','02'=>'II','03'=>'III',
+				'04'=>'IV','05'=>'V','06'=>'VI',
+				'07'=>'VII','08'=>'VIII','09'=>'IX',
+				'10'=>'X','11'=>'XI','12'=>'XII'
+			);
+
+			$pref = '';
+			$no = ($_POST['so_type'] == 1 ? 'P.' : 'NP.');
+
+			if($get->num_rows() > 0){
+				$row 	= $get->row();
+				$path 	= explode('/', $row->so_number);
+				$first	= explode('.', $path[0]);
+				$sec 	= explode('-', $path[1]);
+
+				if(($sec[1] + 1) == date('Y')) $n = '0001';
+            	else $n = $first[1] + 1;
+
+	            if(strlen($n) < 4){
+	                for($x = 1; $x <= (4 - strlen($n)); $x++){
+	                    $pref .= '0';
+	                }
+	            }
+			}else{
+				$n = '0001';
+			}
+
+			$no .= $pref . $n . '/' . $lr[date('m')] . '-' . date('Y');
+			echo $no;
+		}
 		public function newtr(){
 			$this->load->view('salesorder/newtr');
 		}

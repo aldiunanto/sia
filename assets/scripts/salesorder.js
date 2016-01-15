@@ -36,6 +36,7 @@ salesorder = {
 	add: {
 		init: function(){
 			this._datePickerInit();
+			this._generateSONumb();
 			this._openCustomers();
 			this._salesRemoveStyle();
 			this._prodDataTables();
@@ -46,6 +47,12 @@ salesorder = {
 			$('.date-picker').datepicker({
 	            autoclose: true
 	        });
+		},
+		_generateSONumb: function(){
+			$('select[name="so_type"]').on('change', function(){
+				var soNumb = LIBS.callAjax('/salesorder/generateSONumb', 'so_type=' + $(this).val());
+				$('input[name="so_number"]').val(soNumb);
+			})
 		},
 		_openCustomers: function(){
 			var self = this;

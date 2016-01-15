@@ -25,5 +25,12 @@
 		public function save($so_id, $args){
 			return $this->db->where($this->primary, $so_id)->update($this->tbl, $args);
 		}
+		public function getLastNumb($so_type){
+			return $this->db->select('so_number')
+							->where('so_type', $so_type)
+							->order_by('created_at', 'DESC')
+							->limit(1)
+							->get($this->tbl);
+		}
 
 	}
