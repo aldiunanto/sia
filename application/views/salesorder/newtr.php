@@ -19,7 +19,7 @@
 	<td></td>
 	<td></td>
 	<td>
-		<input type="text" class="form-control input-sm text-center" name="sos_qty[]" />
+		<input type="text" class="form-control input-sm text-center" required="required" name="sos_qty[]" />
 	</td>
 	<td>
 		<button class="btn btn-danger btn-sm remove-prod" role="button">
