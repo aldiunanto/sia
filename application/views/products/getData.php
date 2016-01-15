@@ -1,4 +1,18 @@
 <div class="row">
+	<div class="col-md-6">
+		<form action="" method="post">
+			<div class="input-group">
+				<input type="text" class="form-control" name="filter" placeholder="Search" />
+				<span class="input-group-btn">
+					<button class="btn default open-cust" type="button">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row">
 	<div class="col-md-12">
 		<div class="table-container" id="prod-getData">
 			<table class="table table-striped table-bordered table-hover" id="products-list">
@@ -27,7 +41,7 @@
 						foreach($fetch->result() as $row){
 					?>
 
-							<tr>
+							<tr class="prod-item" data-prod-name="<?php echo strtoupper($row->prod_name) ?>">
 								<td><?php echo ++$x ?></td>
 								<td><?php echo $row->prod_name ?></td>
 								<td><?php echo $row->cat_name ?></td>

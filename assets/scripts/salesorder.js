@@ -74,7 +74,7 @@ salesorder = {
 						}
 					});
 
-					self._customerFilter();
+					self._dataFilter('cust-item', 'data-cust-name');
 					self._custTakeMeOut();
 				}
 			})
@@ -85,14 +85,14 @@ salesorder = {
 				$('input[name="cust_name"], input[name="cust_id"]').val('');
 			})
 		},
-		_customerFilter: function(){
+		_dataFilter: function(trClass, filtered){
 			var doFilter = function(){
 				var val = $('input[name="filter"]').val();
 		    	    	
-		        if(val == ''){ $('tr.cust-item').show(); }
+		        if(val == ''){ $('tr.' + trClass).show(); }
 		        else{
-		        	$('tr.cust-item[data-cust-name*="' + val.toUpperCase() + '"]').show();
-		            $('tr.cust-item:not([data-cust-name*="' + val.toUpperCase() + '"])').hide();
+		        	$('tr.' + trClass + '[' + filtered + '*="' + val.toUpperCase() + '"]').show();
+		            $('tr.' + trClass + ':not([' + filtered + '*="' + val.toUpperCase() + '"])').hide();
 		        }
 			};
 
@@ -129,6 +129,7 @@ salesorder = {
 					'doAction'		: function(){},
 					'doSomething'	: function(){
 						self._prodTakeMeOut(el);
+						self._dataFilter('prod-item', 'data-prod-name');
 					}
 				});
 
