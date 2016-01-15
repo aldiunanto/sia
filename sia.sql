@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2016 at 10:21 
+-- Generation Time: Jan 15, 2016 at 08:23 
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -621,14 +621,16 @@ CREATE TABLE IF NOT EXISTS `salesorder` (
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`so_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `salesorder`
 --
 
 INSERT INTO `salesorder` (`so_id`, `so_type`, `so_number`, `sales_id`, `cust_id`, `so_date`, `so_po_number`, `so_deliv_req`, `so_pay_terms`, `visibility`, `created_at`, `updated_at`) VALUES
-(1, 1, 'P.0001/I-2016', 1, 1, '2016-01-12', 'P/123/JIU/16', '2016-01-18', 4, 1, '2016-01-12 09:35:00', '2016-01-13 07:56:22');
+(1, 1, 'P.0001/I-2016', 1, 1, '2016-01-12', 'P/123/JIU/16', '2016-01-18', 4, 1, '2016-01-12 09:35:00', '2016-01-13 07:56:22'),
+(2, 2, 'NP.0001/I-2016', 6, 3, '2016-01-15', 'PO/01/I/2016', '2016-01-22', 4, 1, '2016-01-15 14:17:31', '2016-01-15 07:20:40'),
+(3, 1, 'P.0002/I-2016', 6, 4, '2016-01-15', 'PO/02/I/2016', '2016-01-19', 2, 1, '2016-01-15 14:21:50', '2016-01-15 07:21:50');
 
 -- --------------------------------------------------------
 
@@ -642,7 +644,7 @@ CREATE TABLE IF NOT EXISTS `salesorder_sub` (
   `prod_id` int(11) NOT NULL,
   `sos_qty` double NOT NULL,
   PRIMARY KEY (`sos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `salesorder_sub`
@@ -650,7 +652,11 @@ CREATE TABLE IF NOT EXISTS `salesorder_sub` (
 
 INSERT INTO `salesorder_sub` (`sos_id`, `so_id`, `prod_id`, `sos_qty`) VALUES
 (1, 1, 1, 210),
-(2, 1, 3, 152);
+(2, 1, 3, 152),
+(3, 2, 170, 5),
+(4, 2, 188, 7),
+(5, 3, 76, 8),
+(6, 3, 128, 2);
 
 -- --------------------------------------------------------
 
