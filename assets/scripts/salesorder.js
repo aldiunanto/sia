@@ -137,6 +137,8 @@ salesorder = {
 			})
 		},
 		_addItem: function(){
+			var self = this;
+
 			$('.add-item').on('click', function(e){
 				e.preventDefault();
 
@@ -144,6 +146,7 @@ salesorder = {
 				$('#so-sub').append(newTr);
 
 				$('html, body').animate({ scrollTop: $(document).height() }, 500);
+				self._removeProd();
 			})
 		},
 		_prodTakeMeOut: function(opener, table){
