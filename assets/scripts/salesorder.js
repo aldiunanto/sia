@@ -4,6 +4,7 @@ salesorder = {
 		init: function(){
 			this._dataTables();
 			this._deleteSO();
+			this._createInvoice();
 		},
 		_dataTables: function(){
 			$('#so-list').DataTable({
@@ -30,6 +31,34 @@ salesorder = {
 					}
 				});
 			});
+		},
+		_createInvoice: function(){
+			var self = this;
+
+			$('#so-list').on('click', 'a.create-invoice', function(e){
+				e.preventDefault();
+				var el = $(this);
+
+				LIBS.callModal('#basic', {
+					'title'			: 'Invoice Form',
+					'body'			: LIBS.callAjax(el.attr('href')),
+					'doAction'		: function(){},
+					'doSomething'	: function(){
+						$('#basic .modal-footer').hide();
+					}
+				});
+
+				self._submitInvoice();
+			});
+		},
+		_submitInvoice: function(){
+			$('#invo-form button.true').on('click', function(){
+				if($('input[name="invo_number"]').val() == ''){
+					$('input[name="invo_number"]').css('border', '1px solid #ff0000');
+				}else{
+					$('#invo-form').submit();
+				}
+			})
 		}
 	},
 

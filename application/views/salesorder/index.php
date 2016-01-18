@@ -23,12 +23,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="invoice" role="basic" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-				</div>
-			</div>
-		</div>
 
 		<?php $this->load->view('parts/style_customizer') ?>
 
@@ -104,7 +98,7 @@
 															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>" class="detail" data-target="#ajax" data-toggle="modal"><i class="fa fa-eye"></i> Detail</a></li>
 															<li><a href="<?php echo site_url('salesorder/edit/' . $row->so_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
 															<li><a href="<?php echo site_url('printing/so/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print SO</a></li>
-															<li><a href="<?php echo site_url('salesorder/createinvoice/' . $row->so_id) ?>" class="create-invoice" data-target="#invoice" data-toggle="modal"><i class="fa fa-money"></i> Create Invoice</a></li>
+															<li><a href="<?php echo site_url('salesorder/createinvoice/' . $row->so_id) ?>" class="create-invoice"><i class="fa fa-money"></i> Create Invoice</a></li>
 															<li class="divider"></li>
 															<li><a href="<?php echo site_url('salesorder/delete/' . $row->so_id) ?>" class="delete"><i class="fa fa-trash-o"></i> Delete</a></li>
 														</ul>
