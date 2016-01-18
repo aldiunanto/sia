@@ -118,5 +118,8 @@
 			$this->session->set_flashdata('message', '<div class="alert alert-success">A new Sales Order successfully created.</div>');
 			redirect('salesorder');
 		}
+		public function cretateinvoice($so_id){
+			
+		}
 
 	}
