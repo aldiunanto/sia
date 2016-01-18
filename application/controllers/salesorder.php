@@ -125,5 +125,8 @@
 
 			$this->load->view('salesorder/createinvoice', $data);
 		}
+		public function storeinvoice(){
+			print_r($_POST);
+		}
 
 	}
