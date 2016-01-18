@@ -8,7 +8,7 @@
 
 			$data = array(
 				'head'	=> $this->so->fetch(array($this->so->primary => $id))->row(),
-				'sub'	=> $this->sos->fetch(array($this->so->primary => $id))->result();
+				'sub'	=> $this->sos->fetch(array($this->so->primary => $id))->result()
 			);
 		}
 
