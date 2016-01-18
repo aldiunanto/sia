@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2016 at 08:23 
+-- Generation Time: Jan 18, 2016 at 09:15 
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -71,6 +71,30 @@ INSERT INTO `customers` (`cust_id`, `cust_name`, `sales_id`) VALUES
 (8, 'Abadi Baru', 6),
 (9, 'Abadi Jasa', 6),
 (10, 'Abdul Aziz', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE IF NOT EXISTS `invoice` (
+  `invo_id` int(11) NOT NULL AUTO_INCREMENT,
+  `so_id` int(11) NOT NULL,
+  `invo_number` varchar(20) NOT NULL,
+  `do_number` varchar(50) NOT NULL,
+  `invo_extra_charge` double NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`invo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`invo_id`, `so_id`, `invo_number`, `do_number`, `invo_extra_charge`, `created_at`, `updated_at`) VALUES
+(1, 2, 'INV-18-01-16', 'DO/18/01-16', 5000, '2016-01-18 14:41:52', '2016-01-18 07:41:52');
 
 -- --------------------------------------------------------
 
