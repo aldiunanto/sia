@@ -6,7 +6,7 @@
 		public 		$primary	= 'so_id';
 
 		public function fetch($where = null){
-			$this->db->select('A.*, B.sales_fname, B.sales_lname, C.cust_name, D.inv_id')
+			$this->db->select('A.*, B.sales_fname, B.sales_lname, C.cust_name, D.invo_id')
 					 ->join('sales AS B', 'A.sales_id = B.sales_id', 'INNER')
 					 ->join('customers AS C', 'A.cust_id = C.cust_id', 'INNER')
 					 ->join('invoice AS D', 'A.so_id = D.so_id', 'LEFT OUTER')

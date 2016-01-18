@@ -98,7 +98,12 @@
 															<li><a href="<?php echo site_url('salesorder/detail/' . $row->so_id) ?>" class="detail" data-target="#ajax" data-toggle="modal"><i class="fa fa-eye"></i> Detail</a></li>
 															<li><a href="<?php echo site_url('salesorder/edit/' . $row->so_id) ?>"><i class="fa fa-edit"></i> Edit</a></li>
 															<li><a href="<?php echo site_url('printing/so/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print SO</a></li>
+
+															<?php if(empty($row->invo_id)) : ?>
 															<li><a href="<?php echo site_url('salesorder/createinvoice/' . $row->so_id) ?>" class="create-invoice"><i class="fa fa-money"></i> Create Invoice</a></li>
+															<?php else : ?>
+																<li><a href="<?php echo site_url('printing/invoice/' . $row->so_id) ?>"><i class="fa fa-print"></i> Print Invoice</a></li>
+															<?php endif; ?>
 															<li class="divider"></li>
 															<li><a href="<?php echo site_url('salesorder/delete/' . $row->so_id) ?>" class="delete"><i class="fa fa-trash-o"></i> Delete</a></li>
 														</ul>

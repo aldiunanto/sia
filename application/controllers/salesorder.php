@@ -120,7 +120,7 @@
 		}
 		public function createinvoice($so_id){
 			$data = array(
-				'row'	=> $this->so->fetch(array($this->so->primary => $so_id))->row()
+				'row'	=> $this->so->fetch(array('A.' . $this->so->primary => $so_id))->row()
 			);
 
 			$this->load->view('salesorder/createinvoice', $data);
