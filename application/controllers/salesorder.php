@@ -126,7 +126,19 @@
 			$this->load->view('salesorder/createinvoice', $data);
 		}
 		public function storeinvoice(){
-			print_r($_POST);
+			$vals = array(
+				'so_id'				=> $this->input->post('so_id'),
+				'invo_number'		=> trim($this->input->post('invo_number')),
+				'do_number'			=> trim($this->input->post('do_number')),
+				'invo_extra_charge'	=> trim($this->input->post('invo_extra_charge')),
+				'created_at'		=> now(true)
+			);
+
+			$this->load->model('invoice', 'invo', true);
+			$this->invo->create($vals);
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success">Invoice successfully saved.</div>');
+			redirect('salesorder');
 		}
 
 	}
