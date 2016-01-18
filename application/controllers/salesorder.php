@@ -118,8 +118,12 @@
 			$this->session->set_flashdata('message', '<div class="alert alert-success">A new Sales Order successfully created.</div>');
 			redirect('salesorder');
 		}
-		public function cretateinvoice($so_id){
-			
+		public function createinvoice($so_id){
+			$data = array(
+				'row'	=> $this->so->fetch(array($this->so->primary => $so_id))->row()
+			);
+
+			$this->load->view('salesorder/createinvoice', $data);
 		}
 
 	}
