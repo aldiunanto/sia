@@ -172,7 +172,7 @@
 									<div class="col-md-8">
 										<div class="input-group">
 											<input type="hidden" name="cust_id" />
-											<input type="text" class="form-control" name="cust_name" />
+											<input type="text" class="form-control" name="cust_company" />
 											<span class="input-group-btn">
 												<button class="btn default open-cust" type="button">
 													<i class="fa fa-list"></i>

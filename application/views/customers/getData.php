@@ -31,8 +31,8 @@
 							</tr>
 							<?php else : ?>
 							<?php foreach($fetch->result() as $row) : ?>
-							<tr class="cust-item" data-cust-name="<?php echo strtoupper($row->cust_name) ?>">
-								<td><?php echo $row->cust_name ?></td>
+							<tr class="cust-item" data-cust-name="<?php echo strtoupper($row->cust_company) ?>">
+								<td><?php echo $row->cust_company ?></td>
 								<td>
 									<button class="take-me-out btn blue btn-sm" role="button" data-id="<?php echo $row->cust_id ?>">
 										<i class="fa fa-check-square-o"></i>

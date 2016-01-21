@@ -32,7 +32,7 @@
 						<label class="control-label col-md-4">Customer:</label>
 						<div class="col-md-8">
 							<p class="form-control-static">
-								 <?php echo $row->cust_name ?>
+								 <?php echo $row->cust_company ?>
 							</p>
 						</div>
 					</div>

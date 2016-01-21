@@ -97,6 +97,27 @@
 						</li>
 					</ul>
 				</li>
+				<li <?php isActive('customers') ?>>
+					<a href="javascript:;">
+						<i class="fa fa-group"></i>
+						<span class="title">Customer</span>
+						<span class="arrow"></span>
+						<span class="selected">
+						</span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a href="<?php echo site_url('customers') ?>">
+								<i class="fa fa-bars"></i> Data List
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('customers/add') ?>">
+								<i class="fa fa-plus-square"></i> New Customer
+							</a>
+						</li>
+					</ul>
+				</li>
 				<li <?php isActive('salesorder') ?>>
 					<a href="<?php echo site_url('salesorder') ?>">
 						<i class="fa fa-shopping-cart"></i>

@@ -111,7 +111,7 @@ salesorder = {
 		_salesRemoveStyle: function(){
 			$('select[name="sales_id"]').on('change', function(){
 				$(this).removeAttr('style');
-				$('input[name="cust_name"], input[name="cust_id"]').val('');
+				$('input[name="cust_company"], input[name="cust_id"]').val('');
 			})
 		},
 		_dataFilter: function(trClass, filtered){
@@ -139,7 +139,7 @@ salesorder = {
 					custName 	: $(el).parent().prev().html()
 				};
 
-				$('input[name="cust_name"]').val(cust.custName);
+				$('input[name="cust_company"]').val(cust.custName);
 				$('input[name="cust_id"]').val(cust.custId);
 
 				$('#basic').modal('hide');
