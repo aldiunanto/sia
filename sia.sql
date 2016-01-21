@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2016 at 09:15 
+-- Generation Time: Jan 21, 2016 at 08:04 
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -51,26 +51,40 @@ INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `customers` (
   `cust_id` int(11) NOT NULL AUTO_INCREMENT,
-  `cust_name` varchar(100) NOT NULL,
   `sales_id` int(11) NOT NULL,
+  `cust_company` varchar(50) NOT NULL,
+  `cust_business` char(1) NOT NULL DEFAULT '1' COMMENT '1:Manufacture|2:Distributor|3:Retailer',
+  `cust_pers` varchar(50) NOT NULL DEFAULT '',
+  `cust_persposition` varchar(50) NOT NULL DEFAULT '',
+  `cust_open` time NOT NULL DEFAULT '08:00:00',
+  `cust_close` time NOT NULL DEFAULT '17:00:00',
+  `cust_product` varchar(50) NOT NULL,
+  `cust_email` varchar(50) NOT NULL,
+  `cust_phone1` varchar(20) NOT NULL,
+  `cust_phone2` varchar(20) NOT NULL,
+  `cust_fax1` varchar(20) NOT NULL,
+  `cust_fax2` varchar(20) NOT NULL,
+  `cust_npwp` varchar(20) NOT NULL,
+  `cust_zipcode` varchar(20) NOT NULL DEFAULT '',
+  `cust_address` text,
+  `cust_city` varchar(50) NOT NULL,
+  `cust_reg` char(2) NOT NULL,
+  `cust_remarks` longtext,
+  `visibility` tinyint(1) NOT NULL COMMENT '1:Active|2:Deleted',
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`cust_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`cust_id`, `cust_name`, `sales_id`) VALUES
-(1, 'Blue Bird', 6),
-(2, 'Aba Mandiri', 6),
-(3, 'Chemco Harapan Nusantara', 6),
-(4, 'Dharma Precision Part', 6),
-(5, 'Tokai Kogu', 6),
-(6, 'Abacus Kencana', 6),
-(7, 'Abadi Adi Mulia', 6),
-(8, 'Abadi Baru', 6),
-(9, 'Abadi Jasa', 6),
-(10, 'Abdul Aziz', 6);
+INSERT INTO `customers` (`cust_id`, `sales_id`, `cust_company`, `cust_business`, `cust_pers`, `cust_persposition`, `cust_open`, `cust_close`, `cust_product`, `cust_email`, `cust_phone1`, `cust_phone2`, `cust_fax1`, `cust_fax2`, `cust_npwp`, `cust_zipcode`, `cust_address`, `cust_city`, `cust_reg`, `cust_remarks`, `visibility`, `created_at`, `updated_at`) VALUES
+(1, 6, 'PT ABABIL INDO GROUP Tbk.', '2', 'Aldi Unanto', 'Mucikari', '21:00:00', '04:00:00', 'Cabe-cabean', 'mucikari@aldiunanto.com', '080911119000', '080911118000', '0213459870', '', '382948294738', '32837', 'Jalan Margonda Raya', 'Depok', 'ID', 'Agar setiap pengiriman dapat diperhatikan pengirimnya :)', 1, '2016-01-14 16:39:31', '2016-01-21 06:41:53'),
+(2, 6, 'PT TOSSARO JAYA', '1', 'Hamzah Tossaro', 'Purchasing', '08:00:00', '17:00:00', 'People', 'hamzah@tossaro.com', '213232242432', '', '24343535453', '', '3243435342', '0', 'Jalan jalan', 'Unknown', 'JP', 'Oh Yess...', 1, '2016-01-14 16:57:30', '2016-01-21 06:41:53'),
+(3, 6, 'PT Ajag Ijig', '3', 'Anggita Julianisca Mulyana', 'Pegawai Biasa', '06:30:00', '17:40:00', 'Makanan dan Minuman', 'bee_girlz@yahoo.co.id', '94284948923', '2048924823', '324342424', '', '9428947', '382378', 'Jalan jalan', 'Jakarta', 'ID', 'gvaegvaeb', 2, '2016-01-15 09:31:54', '2016-01-21 06:41:53'),
+(4, 6, 'PT Test & Test', '2', 'Misteri', 'Tukang Sapu', '07:00:00', '06:55:00', 'Sapu berkualitas', 'tukang@sapu.com', '12345678', '', '12345678', '', '128948297837', '89641', 'Sepanjang jalan', 'Trotoar Jalan', 'AF', 'Di Afghanistan gak ada trotoar dan tukang sapu', 1, '2016-01-15 09:45:55', '2016-01-21 06:41:53');
 
 -- --------------------------------------------------------
 
@@ -645,16 +659,7 @@ CREATE TABLE IF NOT EXISTS `salesorder` (
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`so_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `salesorder`
---
-
-INSERT INTO `salesorder` (`so_id`, `so_type`, `so_number`, `sales_id`, `cust_id`, `so_date`, `so_po_number`, `so_deliv_req`, `so_pay_terms`, `visibility`, `created_at`, `updated_at`) VALUES
-(1, 1, 'P.0001/I-2016', 1, 1, '2016-01-12', 'P/123/JIU/16', '2016-01-18', 4, 1, '2016-01-12 09:35:00', '2016-01-13 07:56:22'),
-(2, 2, 'NP.0001/I-2016', 6, 3, '2016-01-15', 'PO/01/I/2016', '2016-01-22', 4, 1, '2016-01-15 14:17:31', '2016-01-15 07:20:40'),
-(3, 1, 'P.0002/I-2016', 6, 4, '2016-01-15', 'PO/02/I/2016', '2016-01-19', 2, 1, '2016-01-15 14:21:50', '2016-01-15 07:21:50');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -668,19 +673,7 @@ CREATE TABLE IF NOT EXISTS `salesorder_sub` (
   `prod_id` int(11) NOT NULL,
   `sos_qty` double NOT NULL,
   PRIMARY KEY (`sos_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `salesorder_sub`
---
-
-INSERT INTO `salesorder_sub` (`sos_id`, `so_id`, `prod_id`, `sos_qty`) VALUES
-(1, 1, 1, 210),
-(2, 1, 3, 152),
-(3, 2, 170, 5),
-(4, 2, 188, 7),
-(5, 3, 76, 8),
-(6, 3, 128, 2);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
