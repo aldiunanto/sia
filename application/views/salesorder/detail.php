@@ -96,7 +96,7 @@
 	 			</div>
 
 	 			<h3 class="form-section">Products</h3>
-	 			<div class="table-container">
+	 			<div class="table-container table-responsive">
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr role="row" class="heading">

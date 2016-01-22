@@ -55,7 +55,7 @@
 				<div class="portlet">
 					<div class="portlet-body">
 						<?php echo $this->session->flashdata('message') ?>
-						<div class="table-container">
+						<div class="table-container table-responsive">
 							<table class="table table-striped table-bordered table-hover" id="product-list">
 								<thead>
 									<tr role="row" class="heading">

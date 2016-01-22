@@ -212,7 +212,7 @@
 						</div>
 					</div>
 					<div class="portlet-body">
-						<div class="table-container">
+						<div class="table-container table-responsive">
 							<table class="table table-striped table-bordered table-hover" id="so-sub">
 								<thead>
 									<tr role="row" class="heading">
