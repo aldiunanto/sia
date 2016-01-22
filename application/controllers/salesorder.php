@@ -21,7 +21,7 @@
 		}
 		public function detail($so_id){
 			$data = array(
-				'head'	=> $this->so->fetch(array($this->so->primary => $so_id))->row(),
+				'head'	=> $this->so->fetch(array('A.' . $this->so->primary => $so_id))->row(),
 				'sub'	=> $this->sos->fetch(array('A.' . $this->so->primary => $so_id))->result()
 			);
 
